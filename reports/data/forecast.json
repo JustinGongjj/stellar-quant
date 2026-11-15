@@ -1,0 +1,658 @@
+{
+ "state": {
+  "as_of": "2026-11-01",
+  "phase": "衰退",
+  "inputs": {
+   "cpi_yoy": 0.7,
+   "gdp_yoy": 4.6,
+   "pmi": 49.3,
+   "ppi_yoy": 5.7
+  },
+  "phase_history": {
+   "无法判定": 61,
+   "滞胀": 45,
+   "衰退": 38,
+   "复苏": 21,
+   "过热": 14
+  },
+  "note": "相位由 GDP 累计同比与 CPI 同比的 3 期差分符号决定；宏观数据按公布滞后对齐，无前视"
+ },
+ "factors": {
+  "clusters": [
+   {
+    "size": 6,
+    "members": [
+     {
+      "name": "MA60",
+      "icir": 0.44,
+      "ic_mean": 0.0623,
+      "t": 13.8
+     },
+     {
+      "name": "MA20",
+      "icir": 0.437,
+      "ic_mean": 0.057,
+      "t": 14.4
+     },
+     {
+      "name": "MA10",
+      "icir": 0.418,
+      "ic_mean": 0.0528,
+      "t": 14.5
+     },
+     {
+      "name": "MIN5",
+      "icir": 0.411,
+      "ic_mean": 0.0532,
+      "t": 15.2
+     },
+     {
+      "name": "MIN20",
+      "icir": 0.381,
+      "ic_mean": 0.0533,
+      "t": 12.9
+     },
+     {
+      "name": "RET20",
+      "icir": 0.342,
+      "ic_mean": 0.0524,
+      "t": 11.1
+     }
+    ],
+    "cluster_icir": 0.4048333333333333,
+    "cluster_label": "动量与位置"
+   },
+   {
+    "size": 4,
+    "members": [
+     {
+      "name": "AMT_RATIO60",
+      "icir": -0.482,
+      "ic_mean": -0.05,
+      "t": -15.4
+     },
+     {
+      "name": "AMT_RATIO20",
+      "icir": -0.455,
+      "ic_mean": -0.0413,
+      "t": -15.6
+     },
+     {
+      "name": "VSUMD60",
+      "icir": -0.496,
+      "ic_mean": -0.0467,
+      "t": -16.3
+     },
+     {
+      "name": "VMA60",
+      "icir": 0.441,
+      "ic_mean": 0.048,
+      "t": 15.1
+     }
+    ],
+    "cluster_icir": -0.248,
+    "cluster_label": "量能异动"
+   },
+   {
+    "size": 2,
+    "members": [
+     {
+      "name": "VSTD20",
+      "icir": -0.669,
+      "ic_mean": -0.0531,
+      "t": -21.3
+     },
+     {
+      "name": "VSTD10",
+      "icir": -0.601,
+      "ic_mean": -0.0451,
+      "t": -19.5
+     }
+    ],
+    "cluster_icir": -0.635,
+    "cluster_label": "量能波动·VSTD20"
+   },
+   {
+    "size": 2,
+    "members": [
+     {
+      "name": "AMT_MA5",
+      "icir": -0.523,
+      "ic_mean": -0.0597,
+      "t": -16.1
+     },
+     {
+      "name": "LN_CAP",
+      "icir": -0.101,
+      "ic_mean": -0.0186,
+      "t": -3.1
+     }
+    ],
+    "cluster_icir": -0.312,
+    "cluster_label": "规模与活跃度"
+   },
+   {
+    "size": 2,
+    "members": [
+     {
+      "name": "STD20",
+      "icir": -0.315,
+      "ic_mean": -0.0586,
+      "t": -10.0
+     },
+     {
+      "name": "TURN5",
+      "icir": -0.321,
+      "ic_mean": -0.0587,
+      "t": -10.2
+     }
+    ],
+    "cluster_icir": -0.318,
+    "cluster_label": "波动与换手"
+   },
+   {
+    "size": 2,
+    "members": [
+     {
+      "name": "KMID",
+      "icir": -0.195,
+      "ic_mean": -0.0253,
+      "t": -11.3
+     },
+     {
+      "name": "CLOSE_POS",
+      "icir": -0.158,
+      "ic_mean": -0.0174,
+      "t": -9.0
+     }
+    ],
+    "cluster_icir": -0.1765,
+    "cluster_label": "形态与离散度·KMID"
+   },
+   {
+    "size": 1,
+    "members": [
+     {
+      "name": "VSTD60",
+      "icir": -0.527,
+      "ic_mean": -0.0536,
+      "t": -16.7
+     }
+    ],
+    "cluster_icir": -0.527,
+    "cluster_label": "量能波动·VSTD60"
+   },
+   {
+    "size": 1,
+    "members": [
+     {
+      "name": "CORR20",
+      "icir": -0.428,
+      "ic_mean": -0.0323,
+      "t": -13.8
+     }
+    ],
+    "cluster_icir": -0.428,
+    "cluster_label": "形态与离散度·CORR20"
+   }
+  ],
+  "n_factors_evaluated": 57,
+  "link_rule": "|corr|>=0.45 平均连接聚类；连线强度=|corr|"
+ },
+ "prediction": {
+  "as_of": "2026-09-15",
+  "horizon_days": 5,
+  "model": "v4 (DoubleEnsemble, 19 量价特征)",
+  "oos_rank_ic": 0.07575130199189634,
+  "oos_ece": 0.003734560574578302,
+  "n_oos_periods": 105,
+  "top20": [
+   {
+    "symbol": "300571",
+    "score": 0.008801797346284975
+   },
+   {
+    "symbol": "688523",
+    "score": 0.006339525974082606
+   },
+   {
+    "symbol": "300733",
+    "score": 0.0059336495801614745
+   },
+   {
+    "symbol": "002283",
+    "score": 0.005213339845011154
+   },
+   {
+    "symbol": "603916",
+    "score": 0.005034549898513244
+   },
+   {
+    "symbol": "301596",
+    "score": 0.004379196695852014
+   },
+   {
+    "symbol": "688779",
+    "score": 0.004379196695852014
+   },
+   {
+    "symbol": "300508",
+    "score": 0.003982466713734175
+   },
+   {
+    "symbol": "301269",
+    "score": 0.0038497726385606445
+   },
+   {
+    "symbol": "300652",
+    "score": 0.0036607376954514706
+   },
+   {
+    "symbol": "688717",
+    "score": 0.0032236483769901214
+   },
+   {
+    "symbol": "603660",
+    "score": 0.003196926422681725
+   },
+   {
+    "symbol": "688335",
+    "score": 0.003173089781811191
+   },
+   {
+    "symbol": "603733",
+    "score": 0.003104023944170287
+   },
+   {
+    "symbol": "688507",
+    "score": 0.0030823059139106863
+   },
+   {
+    "symbol": "688685",
+    "score": 0.0030807927506833906
+   },
+   {
+    "symbol": "300881",
+    "score": 0.0030329613301649594
+   },
+   {
+    "symbol": "002656",
+    "score": 0.002857994997228023
+   },
+   {
+    "symbol": "688584",
+    "score": 0.0028518132218182694
+   },
+   {
+    "symbol": "001339",
+    "score": 0.0028412659143087333
+   }
+  ],
+  "score_quantiles": {
+   "0.0": -0.005583456290425071,
+   "0.25": -0.0008952795308083509,
+   "0.5": -0.000472173818837398,
+   "0.75": 0.00040647270626263497,
+   "1.0": 0.008801797346284975
+  },
+  "warning": "RankIC 0.076 意味着排序能力很弱；单只股票的预测不构成交易建议",
+  "staleness_days": 60,
+  "panel_end": "2026-09-30",
+  "staleness_note": "预测时点 2026-09-15，距今 60 天；面板截断在 2026-09-30。要变成\"当日预测\"，需补齐数据到最新交易日并重跑打分。"
+ },
+ "evidence": [
+  {
+   "claim": "量价因子簇在 2013-2026 全样本显著",
+   "grade": "A（已过 BH 校正）",
+   "value": "57 个因子中多数 q<0.01",
+   "source": "reports/data/factor_mine_h5_partial.csv",
+   "fails_if": "未来量价结构改变（如全面注册制后小盘效应消失）"
+  },
+  {
+   "claim": "宏观变量当特征可提升 IC",
+   "grade": "B（方向一致但仅 105 期）",
+   "value": "IC 0.0434 → 0.0501",
+   "source": "reports/data/macro_state_model.json",
+   "fails_if": "换训练窗口后不再成立（尚未充分检验）"
+  },
+  {
+   "claim": "CTA 与股票策略低相关",
+   "grade": "B（2.1 年重叠样本）",
+   "value": "corr 0.161",
+   "source": "reports/data/combo.json",
+   "fails_if": "股灾/流动性危机中相关性会趋近 1（未检验）"
+  },
+  {
+   "claim": "美林时钟做择时有效",
+   "grade": "D（已被否定）",
+   "value": "超额 +2.53% → −1.94%",
+   "source": "reports/data/clock_model.json",
+   "fails_if": "—"
+  },
+  {
+   "claim": "面板无幸存者偏差",
+   "grade": "F（已证伪）",
+   "value": "缺 123 只退市股（占 2.45%）",
+   "source": "reports/data/delisted_check.csv",
+   "fails_if": "—"
+  }
+ ],
+ "scenarios": [
+  {
+   "name": "复苏",
+   "desc": "增长↑ 通胀↓",
+   "assets": "股票 > 债券 > 商品",
+   "color": "#4ade80",
+   "months": 21,
+   "hist_prob": 0.178,
+   "is_current": false,
+   "index_ann": 0.1463,
+   "index_sharpe": 0.8134,
+   "gravity": 0.534
+  },
+  {
+   "name": "过热",
+   "desc": "增长↑ 通胀↑",
+   "assets": "商品 > 股票 > 债券",
+   "color": "#f59e0b",
+   "months": 14,
+   "hist_prob": 0.1186,
+   "is_current": false,
+   "index_ann": 0.2119,
+   "index_sharpe": 1.0671,
+   "gravity": 0.356
+  },
+  {
+   "name": "滞胀",
+   "desc": "增长↓ 通胀↑",
+   "assets": "现金/商品抗跌",
+   "color": "#ef4444",
+   "months": 45,
+   "hist_prob": 0.3814,
+   "is_current": false,
+   "index_ann": 0.0386,
+   "index_sharpe": 0.1974,
+   "gravity": 1.144
+  },
+  {
+   "name": "衰退",
+   "desc": "增长↓ 通胀↓",
+   "assets": "债券 > 现金 > 股票",
+   "color": "#60a5fa",
+   "months": 38,
+   "hist_prob": 0.322,
+   "is_current": true,
+   "index_ann": 0.0871,
+   "index_sharpe": 0.4279,
+   "gravity": 0.966
+  }
+ ],
+ "events": [
+  {
+   "name": "异常波动",
+   "icir": -0.23935562314227618,
+   "t": -6.693015615073403,
+   "q": 1.748942405956971e-10,
+   "events": 539784,
+   "strength": 0.837,
+   "significant": true
+  },
+  {
+   "name": "减持",
+   "icir": -0.07220330580400793,
+   "t": -2.1388034446846165,
+   "q": 0.12980636151947328,
+   "events": 2712267,
+   "strength": 0.267,
+   "significant": false
+  },
+  {
+   "name": "增持",
+   "icir": -0.06472457632489058,
+   "t": -1.876722266199079,
+   "q": 0.16148311798361623,
+   "events": 809949,
+   "strength": 0.235,
+   "significant": false
+  },
+  {
+   "name": "业绩快报",
+   "icir": 0.06306650352914914,
+   "t": 0.7782977554317535,
+   "q": 0.8727869968675113,
+   "events": 360315,
+   "strength": 0.097,
+   "significant": false
+  },
+  {
+   "name": "回购",
+   "icir": -0.012186640301877482,
+   "t": -0.3669464696699154,
+   "q": 0.9393485782663706,
+   "events": 2232876,
+   "strength": 0.046,
+   "significant": false
+  },
+  {
+   "name": "处罚",
+   "icir": 0.008313702740920127,
+   "t": 0.23160622115863902,
+   "q": 0.9393485782663706,
+   "events": 705423,
+   "strength": 0.029,
+   "significant": false
+  },
+  {
+   "name": "业绩预告",
+   "icir": 0.012286561384201321,
+   "t": 0.22506333204451967,
+   "q": 0.9393485782663706,
+   "events": 987966,
+   "strength": 0.028,
+   "significant": false
+  },
+  {
+   "name": "重组",
+   "icir": 0.0006885356429525139,
+   "t": 0.020516694220481226,
+   "q": 0.9836311948172839,
+   "events": 1082645,
+   "strength": 0.003,
+   "significant": false
+  }
+ ],
+ "timeline": [
+  {
+   "month": "2022-12",
+   "phase": "衰退"
+  },
+  {
+   "month": "2023-01",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2023-02",
+   "phase": "衰退"
+  },
+  {
+   "month": "2023-03",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-04",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-05",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-06",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-07",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-08",
+   "phase": "复苏"
+  },
+  {
+   "month": "2023-09",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2023-10",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2023-11",
+   "phase": "衰退"
+  },
+  {
+   "month": "2023-12",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2024-01",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2024-02",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2024-03",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-04",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-05",
+   "phase": "衰退"
+  },
+  {
+   "month": "2024-06",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-07",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-08",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-09",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2024-10",
+   "phase": "衰退"
+  },
+  {
+   "month": "2024-11",
+   "phase": "衰退"
+  },
+  {
+   "month": "2024-12",
+   "phase": "复苏"
+  },
+  {
+   "month": "2025-01",
+   "phase": "过热"
+  },
+  {
+   "month": "2025-02",
+   "phase": "复苏"
+  },
+  {
+   "month": "2025-03",
+   "phase": "复苏"
+  },
+  {
+   "month": "2025-04",
+   "phase": "复苏"
+  },
+  {
+   "month": "2025-05",
+   "phase": "过热"
+  },
+  {
+   "month": "2025-06",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2025-07",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2025-08",
+   "phase": "衰退"
+  },
+  {
+   "month": "2025-09",
+   "phase": "衰退"
+  },
+  {
+   "month": "2025-10",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2025-11",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2025-12",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2026-01",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2026-02",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2026-03",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2026-04",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2026-05",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2026-06",
+   "phase": "无法判定"
+  },
+  {
+   "month": "2026-07",
+   "phase": "衰退"
+  },
+  {
+   "month": "2026-08",
+   "phase": "衰退"
+  },
+  {
+   "month": "2026-09",
+   "phase": "衰退"
+  },
+  {
+   "month": "2026-10",
+   "phase": "滞胀"
+  },
+  {
+   "month": "2026-11",
+   "phase": "衰退"
+  }
+ ]
+}

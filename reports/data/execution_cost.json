@@ -1,0 +1,98 @@
+[
+ {
+  "size_wan": 1000.0,
+  "slices": 1,
+  "adv_cap": null,
+  "ann_net": 0.08874814529527877,
+  "ann_excess": 0.04177841594359546,
+  "ann_excess_surv_adj": 0.029578415943595456,
+  "ir": 1.7789512119013442,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 3.853190471781112,
+  "cost_per_period_bp": 6.208309748232568
+ },
+ {
+  "size_wan": 1000.0,
+  "slices": 3,
+  "adv_cap": null,
+  "ann_net": 0.08874814529527877,
+  "ann_excess": 0.04177841594359546,
+  "ann_excess_surv_adj": 0.029578415943595456,
+  "ir": 1.7789512119013442,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 3.853190471781112,
+  "cost_per_period_bp": 6.208309748232568
+ },
+ {
+  "size_wan": 5000.0,
+  "slices": 1,
+  "adv_cap": null,
+  "ann_net": 0.08543507677667483,
+  "ann_excess": 0.038465347424991615,
+  "ann_excess_surv_adj": 0.026265347424991613,
+  "ir": 1.6430082725688202,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 8.61599582515705,
+  "cost_per_period_bp": 9.51146625398338
+ },
+ {
+  "size_wan": 5000.0,
+  "slices": 3,
+  "adv_cap": null,
+  "ann_net": 0.08543507677667483,
+  "ann_excess": 0.038465347424991615,
+  "ann_excess_surv_adj": 0.026265347424991613,
+  "ir": 1.6430082725688202,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 8.61599582515705,
+  "cost_per_period_bp": 9.51146625398338
+ },
+ {
+  "size_wan": 10000.0,
+  "slices": 1,
+  "adv_cap": null,
+  "ann_net": 0.08295253034950965,
+  "ann_excess": 0.03598280099782644,
+  "ann_excess_surv_adj": 0.02378280099782644,
+  "ir": 1.5404370747099956,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 12.184858149287066,
+  "cost_per_period_bp": 11.986585417886053
+ },
+ {
+  "size_wan": 10000.0,
+  "slices": 3,
+  "adv_cap": null,
+  "ann_net": 0.08295253034950965,
+  "ann_excess": 0.03598280099782644,
+  "ann_excess_surv_adj": 0.02378280099782644,
+  "ir": 1.5404370747099956,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 12.184858149287065,
+  "cost_per_period_bp": 11.986585417886053
+ },
+ {
+  "size_wan": 50000.0,
+  "slices": 1,
+  "adv_cap": null,
+  "ann_net": 0.07247568778652161,
+  "ann_excess": 0.025505958434838324,
+  "ann_excess_surv_adj": 0.013305958434838323,
+  "ir": 1.1014012881212498,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 27.24617111799816,
+  "cost_per_period_bp": 22.432083444061668
+ },
+ {
+  "size_wan": 50000.0,
+  "slices": 3,
+  "adv_cap": null,
+  "ann_net": 0.07247568778652162,
+  "ann_excess": 0.02550595843483832,
+  "ann_excess_surv_adj": 0.01330595843483832,
+  "ir": 1.1014012881212494,
+  "turnover": 0.6933333333333334,
+  "impact_bp": 27.24617111799816,
+  "cost_per_period_bp": 22.432083444061664
+ }
+]

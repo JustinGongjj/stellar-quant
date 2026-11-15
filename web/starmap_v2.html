@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星衡量化 · 未来星图</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<script src="forecast_data.js"></script>
+<style>
+:root{
+  --bg:#05070f; --bg2:#0a0f1d; --panel:rgba(12,18,32,.82); --line:#1b2740;
+  --text:#e9eefa; --dim:#93a1bd; --accent:#5eb3f6; --gold:#f4c95d;
+  --pos:#ff6b6b; --neg:#3ddc97; --warn:#ffb347;
+  --f11:11px; --f12:12.5px; --f14:14.5px; --f20:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:"Noto Sans CJK SC","PingFang SC",system-ui,sans-serif}
+body{overflow-x:hidden;min-height:100vh}
+canvas#cosmos{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+.wrap{position:relative;z-index:1;max-width:1500px;margin:0 auto;padding:26px 30px 70px}
+header{display:flex;align-items:flex-start;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.brand h1{font-size:var(--f20);font-weight:600;letter-spacing:3px}
+.brand p{font-size:var(--f11);color:var(--dim);margin-top:7px;letter-spacing:.6px;line-height:1.7}
+.state{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:12px 18px;backdrop-filter:blur(10px)}
+.state .lab{font-size:var(--f11);color:var(--dim);letter-spacing:1px}
+.state .val{font-size:var(--f14);color:var(--gold);letter-spacing:2px}
+.state .meta{font-size:var(--f11);color:var(--dim);font-variant-numeric:tabular-nums}
+
+/* 主网格：左星图 / 右引力井 */
+.main{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:18px}
+@media(max-width:1180px){.main{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(10px);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line)}
+.panel-head h2{font-size:var(--f12);font-weight:600;letter-spacing:2.4px;color:var(--text);white-space:nowrap}
+.panel-head{gap:12px}
+@media(max-width:640px){.panel-head span{display:none}}
+.panel-head span{font-size:var(--f11);color:var(--dim)}
+#sky{display:block;width:100%;cursor:pointer;touch-action:manipulation}
+
+/* 引力井 */
+.wells{padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.well{position:relative;border:1px solid var(--line);border-radius:12px;padding:14px;
+  background:radial-gradient(circle at 50% 0%, rgba(255,255,255,.05), transparent 70%);cursor:pointer;
+  transition:border-color .18s, transform .18s}
+.well:hover{border-color:#31456b;transform:translateY(-2px)}
+.well:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.well.current{border-color:var(--gold);box-shadow:0 0 0 1px rgba(244,201,93,.25) inset}
+.well .ring{width:46px;height:46px;border-radius:50%;margin:0 auto 10px;position:relative;
+  border:2px solid currentColor;display:flex;align-items:center;justify-content:center}
+.well .ring::after{content:'';width:14px;height:14px;border-radius:50%;background:currentColor;
+  box-shadow:0 0 16px currentColor;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.28);opacity:1}}
+@media(prefers-reduced-motion:reduce){.well .ring::after{animation:none}}
+.well .nm{text-align:center;font-size:var(--f12);font-weight:600;letter-spacing:1px}
+.well .ds{text-align:center;font-size:var(--f11);color:var(--dim);margin-top:3px}
+.well .pb{text-align:center;font-size:var(--f11);color:var(--dim);margin-top:8px;font-variant-numeric:tabular-nums}
+.well .bar{height:3px;border-radius:2px;background:#18233a;margin-top:6px;overflow:hidden}
+.well .bar i{display:block;height:100%;background:currentColor;border-radius:2px}
+
+/* 事件脉冲 */
+.events{padding:8px 18px 16px}
+.ev{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #131d31}
+.ev:last-child{border-bottom:0}
+.ev .wave{width:34px;height:26px;flex:none}
+.ev .nm{font-size:var(--f12);flex:1}
+.ev .num{font-size:var(--f11);color:var(--dim);font-variant-numeric:tabular-nums;text-align:right}
+.ev .num b{display:block;color:var(--text);font-size:var(--f12)}
+.ev.sig .nm::after{content:'已过校正';font-size:10px;color:var(--neg);border:1px solid #1d4d3a;
+  border-radius:4px;padding:1px 5px;margin-left:7px;vertical-align:1px}
+
+/* 底部三卡 */
+.bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+@media(max-width:1180px){.bottom{grid-template-columns:1fr}}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 18px}
+.kpi{background:#0b1220;border-radius:9px;padding:11px 13px}
+.kpi span{display:block;font-size:var(--f11);color:var(--dim);margin-bottom:5px}
+.kpi b{font-size:var(--f20);font-weight:600;font-variant-numeric:tabular-nums}
+.kpi b.warn{color:var(--warn)}
+.gate{padding:6px 18px 16px}
+.g{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid #131d31;align-items:flex-start}
+.g:last-child{border-bottom:0}
+.g .tag{flex:none;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:var(--f11);font-weight:600;border:1px solid}
+.g.A .tag{color:var(--neg);border-color:#1d4d3a;background:#0c2419}
+.g.B .tag{color:var(--accent);border-color:#1d3853;background:#0b1a2b}
+.g.D .tag{color:var(--pos);border-color:#4d1f1f;background:#2a0f0f}
+.g.F .tag{color:#ff3b3b;border-color:#4d1010;background:#2a0808}
+.g p{font-size:var(--f12);line-height:1.6}
+.g p.v{color:var(--gold);font-size:var(--f11);margin-top:3px}
+.g p.f{color:#7c88a3;font-size:var(--f11);margin-top:2px}
+
+/* 时间轴 */
+.tl{display:flex;gap:2px;padding:14px 18px 16px;align-items:flex-end}
+.tl i{flex:1;border-radius:2px;min-height:6px;cursor:default}
+.tl-legend{display:flex;gap:14px;padding:0 18px 14px;font-size:var(--f11);color:var(--dim);flex-wrap:wrap}
+.tl-legend b{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+
+footer{margin-top:22px;font-size:var(--f11);color:var(--dim);line-height:1.9}
+footer b{color:var(--warn)}
+code{background:#101828;padding:1px 5px;border-radius:3px}
+
+/* 详情抽屉 */
+#drawer{position:fixed;right:0;top:0;height:100%;width:min(430px,92vw);background:rgba(7,11,20,.98);
+  border-left:1px solid var(--line);transform:translateX(101%);transition:transform .26s ease;z-index:40;
+  padding:26px 24px;overflow-y:auto}
+#drawer.open{transform:translateX(0)}
+#drawer h3{font-size:var(--f14);margin-bottom:5px}
+#drawer .sub{font-size:var(--f11);color:var(--dim);margin-bottom:18px}
+#drawer table{width:100%;border-collapse:collapse;font-size:var(--f12)}
+#drawer td{padding:8px 4px;border-bottom:1px solid #131d31;font-variant-numeric:tabular-nums}
+#drawer td:last-child{text-align:right}
+#drawer td.dim{color:var(--dim);font-size:var(--f11)}
+#close{position:absolute;right:14px;top:14px;width:36px;height:36px;border-radius:8px;
+  border:1px solid var(--line);background:#0f1728;color:var(--dim);cursor:pointer;font-size:16px}
+#close:hover{color:var(--text)}
+#close:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#mask{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:39;opacity:0;pointer-events:none;transition:.26s}
+#mask.on{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body>
+<canvas id="cosmos"></canvas>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>未来星图</h1>
+      <p>因子星座 · 情景引力井 · 事件脉冲 · 证据闸门　|　所有数值来自真实回测，无人工设定</p>
+    </div>
+    <div class="state">
+      <div><div class="lab">当前宏观状态</div><div class="val" id="phaseName">—</div></div>
+      <div class="meta" id="phaseMeta"></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>因子星座</h2>
+        <span>亮度=|ICIR|　红=正向　绿=避免型　点击星簇查看明细</span>
+      </div>
+      <canvas id="sky" role="img" aria-label="因子星座：八个星簇，红为正向因子、绿为避免型因子"></canvas>
+    </section>
+
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <section class="panel">
+        <div class="panel-head"><h2>情景引力井</h2><span>概率=历史相位占比</span></div>
+        <div class="wells" id="wells"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>事件脉冲</h2><span>强度=|t|/8</span></div>
+        <div class="events" id="events"></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <section class="panel">
+      <div class="panel-head"><h2>模型预测（样本外）</h2><span id="predDate"></span></div>
+      <div class="kpis">
+        <div class="kpi"><span>RankIC</span><b id="kIc">—</b></div>
+        <div class="kpi"><span>校准 ECE</span><b id="kEce">—</b></div>
+        <div class="kpi"><span>样本外期数</span><b id="kN">—</b></div>
+        <div class="kpi"><span>数据滞后</span><b id="kLag" class="warn">—</b></div>
+      </div>
+      <div style="padding:0 18px 16px;font-size:var(--f11);color:var(--dim);line-height:1.8" id="predNote"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>证据闸门</h2><span>A 通过 / B 待验 / D 否定 / F 证伪</span></div>
+      <div class="gate" id="gate"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>相位轨迹</h2><span>近 48 个月</span></div>
+      <div class="tl" id="timeline"></div>
+      <div class="tl-legend" id="tlLegend"></div>
+    </section>
+  </div>
+
+  <footer>
+    <b>重要说明</b>：所有数值来自 <code>reports/data/forecast.json</code>。RankIC 0.076 表示模型对未来 5 日排序的解释力约 0.6%，
+    <b>不足以预测个股涨跌</b>，仅供研究参考，不构成投资建议。面板不含退市股（缺 123 只，占 2.45%），实际业绩应打折。
+  </footer>
+</div>
+
+<div id="mask"></div>
+<aside id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <button id="close" type="button" aria-label="关闭">✕</button>
+  <h3 id="dTitle"></h3>
+  <div class="sub" id="dSub"></div>
+  <table id="dTable"></table>
+</aside>
+
+<script>
+const D = window.FORECAST || {};
+const $ = id => document.getElementById(id);
+const fmtPct = v => (v*100).toFixed(2) + '%';
+
+/* ========== 背景星尘（缓慢漂移） ========== */
+(function(){
+  const c = $('cosmos'), ctx = c.getContext('2d');
+  let W,H,pts,dpr;
+  function init(){
+    dpr = Math.min(devicePixelRatio||1, 2);
+    W = c.width = innerWidth*dpr; H = c.height = innerHeight*dpr;
+    c.style.width = innerWidth+'px'; c.style.height = innerHeight+'px';
+    pts = Array.from({length: Math.round(innerWidth/6)}, () => ({
+      x: Math.random()*W, y: Math.random()*H,
+      r: (Math.random()*1.1+.25)*dpr, a: Math.random()*.45+.12,
+      vx: (Math.random()-.5)*.06*dpr, vy: (Math.random()-.5)*.06*dpr
+    }));
+  }
+  init(); addEventListener('resize', () => { init(); layout(); });
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function tick(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p => {
+      if(!reduce){ p.x += p.vx; p.y += p.vy;
+        if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0; }
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle = `rgba(140,180,255,${p.a})`; ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ========== 顶部状态 ========== */
+const st = D.state || {};
+$('phaseName').textContent = st.phase || '—';
+const inp = st.inputs || {};
+$('phaseMeta').innerHTML = `${st.as_of || ''}<br>CPI ${inp.cpi_yoy ?? '—'}% · GDP ${inp.gdp_yoy ?? '—'}% · PMI ${inp.pmi ?? '—'}`;
+
+/* ========== 引力井 ========== */
+const wells = $('wells');
+(D.scenarios || []).forEach(s => {
+  const el = document.createElement('button');
+  el.type = 'button';
+  el.className = 'well' + (s.is_current ? ' current' : '');
+  el.style.color = s.color;
+  el.innerHTML = `
+    <div class="ring"></div>
+    <div class="nm" style="color:var(--text)">${s.name}${s.is_current?' · 当前':''}</div>
+    <div class="ds">${s.desc}</div>
+    <div class="pb">历史占比 ${(s.hist_prob*100).toFixed(1)}% · ${s.months} 个月</div>
+    <div class="bar"><i style="width:${Math.min(100,s.hist_prob*260)}%"></i></div>
+    <div class="pb" style="margin-top:6px">沪深300 年化 ${s.index_ann!=null?(s.index_ann*100).toFixed(1)+'%':'—'}</div>`;
+  el.onclick = () => openWell(s);
+  wells.appendChild(el);
+});
+
+/* ========== 事件脉冲 ========== */
+const evBox = $('events');
+function waveSVG(strength, sig){
+  const col = sig ? '#3ddc97' : '#5eb3f6';
+  const amp = 3 + strength*7;
+  let d = 'M0,13 ';
+  for (let i=0;i<=30;i+=3){
+    const x=i, y=13 + Math.sin(i/(3.2))*amp*(1 - i/44);
+    d += `L${x},${y.toFixed(1)} `;
+  }
+  return `<svg class="wave" viewBox="0 0 32 26" aria-hidden="true"><path d="${d}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+}
+(D.events || []).forEach(e => {
+  const row = document.createElement('div');
+  row.className = 'ev' + (e.significant ? ' sig' : '');
+  row.innerHTML = `${waveSVG(e.strength, e.significant)}
+    <div class="nm">${e.name}</div>
+    <div class="num"><b>${e.icir>0?'+':''}${e.icir.toFixed(3)}</b>ICIR · t=${e.t.toFixed(1)}</div>`;
+  evBox.appendChild(row);
+});
+
+/* ========== 模型预测卡 ========== */
+const p = D.prediction || {};
+$('predDate').textContent = p.as_of || '';
+$('kIc').textContent = p.oos_rank_ic != null ? fmtPct(p.oos_rank_ic) : '—';
+$('kEce').textContent = p.oos_ece != null ? fmtPct(p.oos_ece) : '—';
+$('kN').textContent = p.n_oos_periods ?? '—';
+$('kLag').textContent = (p.staleness_days ?? '—') + ' 天';
+$('predNote').textContent = p.staleness_note || '';
+
+/* ========== 证据闸门 ========== */
+const gate = $('gate');
+(D.evidence || []).forEach(e => {
+  const g = (e.grade||'C').trim()[0];
+  const el = document.createElement('div');
+  el.className = 'g ' + g;
+  el.innerHTML = `<div class="tag">${g}</div>
+    <div><p>${e.claim}</p><p class="v">${e.value}</p>
+    ${e.fails_if && e.fails_if!=='—' ? `<p class="f">失效条件：${e.fails_if}</p>` : ''}</div>`;
+  gate.appendChild(el);
+});
+
+/* ========== 相位轨迹 ========== */
+const CMAP = {'复苏':'#4ade80','过热':'#f59e0b','滞胀':'#ef4444','衰退':'#60a5fa','无法判定':'#2a3category'};
+const PH_COLOR = {'复苏':'#4ade80','过热':'#f59e0b','滞胀':'#ef4444','衰退':'#60a5fa','无法判定':'#33415c'};
+const tlBox = $('timeline');
+(D.timeline || []).forEach(t => {
+  const i = document.createElement('i');
+  i.style.height = (10 + (t.phase==='无法判定'?0:14)) + 'px';
+  i.style.background = PH_COLOR[t.phase] || '#33415c';
+  i.title = `${t.month} · ${t.phase}`;
+  tlBox.appendChild(i);
+});
+$('tlLegend').innerHTML = Object.entries(PH_COLOR).map(([k,v]) =>
+  `<span><b style="background:${v}"></b>${k}</span>`).join('');
+
+/* ========== 因子星座 ========== */
+const cv = $('sky'), ctx = cv.getContext('2d');
+const clusters = (D.factors && D.factors.clusters || []).filter(c => c.members && c.members.length);
+let W=0,H=0,nodes=[],links=[];
+
+function layout(){
+  const dpr = Math.min(devicePixelRatio||1, 2);
+  const rect = cv.getBoundingClientRect();
+  W = rect.width;
+  const narrow = W < 640;
+  nodes = []; links = [];
+
+  if (narrow){
+    const rowH = 58;
+    H = Math.max(300, clusters.length*rowH + 20);
+    cv.style.height = H+'px'; cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    clusters.forEach((c,ci) => {
+      const y = 30 + ci*rowH;
+      const core = {x:12,y,label:c.cluster_label,cluster:c,isCore:true,left:true};
+      nodes.push(core);
+      const startX = 168, endX = W-14;
+      const gap = (endX-startX)/Math.max(1,c.members.length);
+      c.members.forEach((m,mi) => {
+        const nd = {x: startX + gap*mi + gap*0.45, y, label:m.name,
+                    icir:m.icir, t:m.t, ic_mean:m.ic_mean, cluster:c};
+        nodes.push(nd); links.push({a:core,b:nd});
+      });
+    });
+    return;
+  }
+
+  H = Math.max(560, Math.round(rect.width*0.70));
+  cv.style.height = H+'px'; cv.width = W*dpr; cv.height = H*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const cx = W/2, cy = H/2, R = Math.min(W*0.44, H*0.40);
+  clusters.forEach((c,ci) => {
+    const ang = (ci/clusters.length)*Math.PI*2 - Math.PI/2;
+    const ccx = cx + Math.cos(ang)*R*1.10, ccy = cy + Math.sin(ang)*R*0.86;
+    const core = {x:ccx,y:ccy,label:c.cluster_label,cluster:c,isCore:true};
+    nodes.push(core);
+    const n = c.members.length;
+    c.members.forEach((m,mi) => {
+      const a = (mi/Math.max(n,1))*Math.PI*2;
+      const rr = n<=2 ? 36+mi*16 : Math.max(48, 16+n*9);
+      const nd = {x:ccx+Math.cos(a)*rr, y:ccy+Math.sin(a)*rr,
+                  lx:Math.cos(a), ly:Math.sin(a), label:m.name,
+                  icir:m.icir, t:m.t, ic_mean:m.ic_mean, cluster:c};
+      nodes.push(nd); links.push({a:core,b:nd});
+    });
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const t = Date.now()/1000;
+  // 连线
+  links.forEach(l => {
+    const g = ctx.createLinearGradient(l.a.x,l.a.y,l.b.x,l.b.y);
+    g.addColorStop(0,'rgba(80,130,210,.34)'); g.addColorStop(1,'rgba(80,130,210,.05)');
+    ctx.strokeStyle = g; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(l.a.x,l.a.y); ctx.lineTo(l.b.x,l.b.y); ctx.stroke();
+  });
+  const labelQ = [];
+  nodes.forEach(n => {
+    const icir = n.isCore ? (n.cluster.cluster_icir||0) : (n.icir||0);
+    const col = icir>0 ? '255,107,107' : '61,220,151';
+    const narrow = W < 640;
+    const base = n.isCore ? (narrow?3.6:5.5) : (narrow?1.7:2.3);
+    const r = base + Math.min(Math.abs(icir)*(narrow?5:9), narrow?4:7);
+    const pulse = reduce ? .9 : (.72 + .28*Math.sin(t*1.7 + n.x*.03));
+    const grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*4.2);
+    grd.addColorStop(0,`rgba(${col},${.30*pulse})`); grd.addColorStop(1,`rgba(${col},0)`);
+    ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(n.x,n.y,r*4.2,0,7); ctx.fill();
+    ctx.fillStyle = `rgba(${col},.95)`;
+    ctx.beginPath(); ctx.arc(n.x,n.y,r,0,7); ctx.fill();
+    if (!n.isCore && narrow) return;
+    labelQ.push({n, r, icir, isCore:n.isCore});
+  });
+  // 标签避让
+  const placed = [];
+  labelQ.forEach(L => {
+    const n = L.n;
+    ctx.font = (L.isCore?'600 ':'') + (L.isCore?12.5:11) + 'px "Noto Sans CJK SC",sans-serif';
+    const tw = ctx.measureText(n.label).width;
+    let tx, ty;
+    if (L.isCore){
+      tx = W<640 ? n.x : n.x;
+      ty = W<640 ? n.y - 4 : n.y - L.r - 13;
+    } else {
+      ty = n.y + (n.ly>=0 ? (L.r+14) : -(L.r+7));
+      tx = n.x + (n.lx||0)*13;
+    }
+    const hit = ty2 => placed.some(q => Math.abs(q.ty-ty2)<13 && Math.abs(q.tx-tx)<(q.tw+tw)/2+5);
+    let tries=0;
+    while (hit(ty) && tries<8){ ty += (tries%2===0?13:-26); tries++; }
+    placed.push({tx,ty,tw});
+    const leftAlign = L.isCore && n.left;
+    ctx.textAlign = leftAlign ? 'left' : 'center';
+    if (L.isCore){
+      ctx.fillStyle = '#e9eefa'; ctx.fillText(n.label, tx, ty);
+      ctx.font = '11px "Noto Sans CJK SC",sans-serif';
+      ctx.fillStyle = 'rgba(147,161,189,.95)';
+      if (leftAlign) ctx.fillText(`${L.icir>0?'+':''}${L.icir.toFixed(2)} · ${n.cluster.size} 个`, tx, ty + 14);
+      else ctx.fillText(`ICIR ${L.icir.toFixed(2)} · ${n.cluster.size} 个`, tx, ty - 15);
+    } else {
+      ctx.fillStyle = 'rgba(205,218,242,.86)'; ctx.fillText(n.label, tx, ty);
+    }
+  });
+  requestAnimationFrame(draw);
+}
+
+/* ========== 抽屉 ========== */
+function openDrawer(title, sub, rows){
+  $('dTitle').textContent = title;
+  $('dSub').textContent = sub;
+  $('dTable').innerHTML = rows;
+  $('drawer').classList.add('open'); $('mask').classList.add('on');
+  $('drawer').setAttribute('aria-hidden','false');
+  $('close').focus();
+}
+function closeDrawer(){
+  $('drawer').classList.remove('open'); $('mask').classList.remove('on');
+  $('drawer').setAttribute('aria-hidden','true');
+}
+$('mask').onclick = closeDrawer; $('close').onclick = closeDrawer;
+addEventListener('keydown', e => { if (e.key==='Escape') closeDrawer(); });
+
+function openCluster(c){
+  const rows = c.members.map(m =>
+    `<tr><td class="dim">${m.name}</td>
+     <td>${m.icir!=null?(m.icir>0?'+':'')+m.icir.toFixed(3):'—'}</td>
+     <td>${m.ic_mean!=null?(m.ic_mean*100).toFixed(2)+'%':'—'}</td>
+     <td>${m.t!=null?m.t.toFixed(1):'—'}</td></tr>`).join('');
+  openDrawer(c.cluster_label,
+    `${c.size} 个因子 · 簇均 ICIR ${(c.cluster_icir||0).toFixed(3)}`,
+    `<tr><td class="dim">因子</td><td class="dim">ICIR</td><td class="dim">IC</td><td class="dim">t</td></tr>` + rows);
+}
+function openWell(s){
+  openDrawer(`${s.name} · 引力井`,
+    `${s.desc}　|　${s.assets}`,
+    `<tr><td class="dim">历史出现</td><td>${s.months} 个月</td></tr>
+     <tr><td class="dim">历史占比</td><td>${(s.hist_prob*100).toFixed(1)}%</td></tr>
+     <tr><td class="dim">当前是否处于</td><td>${s.is_current?'是':'否'}</td></tr>
+     <tr><td class="dim">沪深300 年化</td><td>${s.index_ann!=null?(s.index_ann*100).toFixed(1)+'%':'—'}</td></tr>
+     <tr><td class="dim">沪深300 Sharpe</td><td>${s.index_sharpe!=null?s.index_sharpe.toFixed(2):'—'}</td></tr>`);
+}
+
+cv.addEventListener('click', e => {
+  const r = cv.getBoundingClientRect();
+  const mx = e.clientX-r.left, my = e.clientY-r.top;
+  let hit=null, best=1e9;
+  nodes.forEach(n => { const d = Math.hypot(n.x-mx, n.y-my); if (d<28 && d<best){ best=d; hit=n; } });
+  if (hit && hit.cluster) openCluster(hit.cluster);
+});
+cv.addEventListener('keydown', e => {
+  if (e.key==='Enter' || e.key===' '){ e.preventDefault(); if (clusters[0]) openCluster(clusters[0]); }
+});
+cv.tabIndex = 0;
+
+layout(); draw();
+</script>
+</body>
+</html>

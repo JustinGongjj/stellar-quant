@@ -1,0 +1,58 @@
+{
+ "features": [
+  "KMID",
+  "LN_CAP",
+  "MA10",
+  "MA20",
+  "MA60",
+  "MA20_resid",
+  "MA60_resid",
+  "STD20",
+  "MIN5",
+  "MIN20",
+  "RET20",
+  "TURN5",
+  "VSTD20",
+  "VSTD20_resid",
+  "AMT_RATIO60",
+  "AMT_RATIO60_resid",
+  "VMA60",
+  "VSUMD60",
+  "CORR20",
+  "f_bp",
+  "f_ep",
+  "f_growth",
+  "f_rev_grow",
+  "f_cfo",
+  "f_rev_acc",
+  "f_margin",
+  "f_roe"
+ ],
+ "design": [
+  389550,
+  27
+ ],
+ "test_ic": 0.05747608812813597,
+ "test_ic_n": 105,
+ "brier_cal": 0.2499770772492974,
+ "brier_raw": 0.24997689563224335,
+ "ece": 0.0046966880852103345,
+ "platt": [
+  1.0019613583042297,
+  -0.002798916626233784
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "n_features": 27,
+   "train_ic": 0.038270695213335704,
+   "best_iter": 5
+  },
+  {
+   "round": 1,
+   "n_features": 20,
+   "train_ic": 0.044769100247999856,
+   "best_iter": 13
+  }
+ ]
+}

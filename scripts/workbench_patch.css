@@ -1,0 +1,18 @@
+/* ---- 量化实证 / 产业传导 / 预测 ---- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.kpi{background:#fff;border:1px solid #e8e4dc;border-radius:9px;padding:12px 14px}
+.kpi span{display:block;font-size:11px;color:#8a8578;margin-bottom:6px;letter-spacing:.02em}
+.kpi b{display:block;font-size:20px;font-weight:600;color:#232823;font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi b.pos{color:#0a7a52}.kpi b.neg{color:#c0392b}
+.kpi i{display:block;font-style:normal;font-size:10px;color:#a8a294;margin-top:4px}
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.tbl th{text-align:left;font-weight:500;font-size:11px;color:#8a8578;padding:7px 8px;
+  border-bottom:1px solid #e8e4dc;letter-spacing:.03em;white-space:nowrap}
+.tbl td{padding:7px 8px;border-bottom:1px solid #f2efe8;vertical-align:top;line-height:1.65}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.dim,.dim{color:#8a8578;font-size:11px}
+.tbl td.pos,.pos{color:#0a7a52}.tbl td.neg,.neg{color:#c0392b}
+.card .sub{font-size:11.5px;color:#8a8578;margin:2px 0 4px;line-height:1.6}
+.card .note{font-size:11.5px;color:#8a8578;margin-top:10px;padding-top:9px;border-top:1px dashed #e8e4dc;line-height:1.7}
+.h1{font-size:19px;font-weight:600;letter-spacing:.04em;margin:6px 0 4px;color:#232823}
+.lead{font-size:12.5px;color:#6b675c;line-height:1.8;margin-bottom:14px}

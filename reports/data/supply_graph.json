@@ -1,0 +1,1300 @@
+{
+ "edges": [
+  {
+   "from": "Lumentum",
+   "to": "中际旭创",
+   "what": "EML/硅光/CW 光芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.48,
+   "share_basis": "EML收入份额",
+   "share_src": "雪球2026-05"
+  },
+  {
+   "from": "Lumentum",
+   "to": "新易盛",
+   "what": "EML/硅光/CW 光芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.48,
+   "share_basis": "同上",
+   "share_src": "雪球2026-05"
+  },
+  {
+   "from": "博通",
+   "to": "中际旭创",
+   "what": "DSP 芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.7,
+   "share_basis": "800G/1.6T oDSP",
+   "share_src": "雪球2025"
+  },
+  {
+   "from": "博通",
+   "to": "新易盛",
+   "what": "DSP 芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.7,
+   "share_basis": "同上",
+   "share_src": "雪球2025"
+  },
+  {
+   "from": "Marvell",
+   "to": "中际旭创",
+   "what": "DSP 芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.22,
+   "share_basis": "同上",
+   "share_src": "雪球2025"
+  },
+  {
+   "from": "天孚通信",
+   "to": "中际旭创",
+   "what": "光模块精密元器件/组件",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "云南锗业",
+   "to": "Lumentum",
+   "what": "磷化铟晶圆（2/4/6 寸）",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.1,
+   "share_basis": "全球产能占比",
+   "share_src": "东方财富2026-06"
+  },
+  {
+   "from": "Vicor",
+   "to": "工业富联",
+   "what": "垂直供电专利（337 诉讼方）",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "Vicor",
+   "to": "立讯精密",
+   "what": "垂直供电专利（337 诉讼方，验证阶段）",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "台达",
+   "to": "英伟达",
+   "what": "电源模块",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.3,
+   "share_basis": "电源模块",
+   "share_src": "推断"
+  },
+  {
+   "from": "台积电",
+   "to": "英伟达",
+   "what": "晶圆制造 + 先进封装",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.9,
+   "share_basis": "晶圆代工唯一",
+   "share_src": "会议"
+  },
+  {
+   "from": "台积电",
+   "to": "苹果",
+   "what": "晶圆制造",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.75,
+   "share_basis": "A系列代工",
+   "share_src": "推断"
+  },
+  {
+   "from": "长电科技",
+   "to": "英伟达",
+   "what": "后端封装",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "通富微电",
+   "to": "英伟达",
+   "what": "后端封装",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "润禾材料",
+   "to": "AI服务器厂商",
+   "what": "浸没式硅油冷却液/热界面材料",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "英维克",
+   "to": "AI服务器厂商",
+   "what": "液冷 CDU/机柜",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "绿的谐波",
+   "to": "特斯拉",
+   "what": "谐波减速器",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.12,
+   "share_basis": "全球谐波份额",
+   "share_src": "东方财富2026-08"
+  },
+  {
+   "from": "三花智控",
+   "to": "特斯拉",
+   "what": "热管理/机电执行器",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.35,
+   "share_basis": "执行器份额",
+   "share_src": "推断"
+  },
+  {
+   "from": "拓普集团",
+   "to": "特斯拉",
+   "what": "执行器/结构件",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.35,
+   "share_basis": "执行器份额",
+   "share_src": "推断"
+  },
+  {
+   "from": "均胜电子",
+   "to": "特斯拉",
+   "what": "机器人电子",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.2,
+   "share_basis": "机器人电子",
+   "share_src": "推断"
+  },
+  {
+   "from": "汇川技术",
+   "to": "人形机器人厂商",
+   "what": "伺服系统",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "双环传动",
+   "to": "人形机器人厂商",
+   "what": "齿轮/RV 减速器",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "昊志机电",
+   "to": "蓝箭航天",
+   "what": "特种电机/泵阀控制器",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "已实现小批量交付",
+   "share": 1.0,
+   "share_basis": "全球唯一供应",
+   "share_src": "雪球2026-01"
+  },
+  {
+   "from": "中天火箭",
+   "to": "商业火箭公司",
+   "what": "固体发动机耐烧蚀组件",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "博云新材",
+   "to": "快舟火箭",
+   "what": "碳/碳喉衬材料",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "已用于快舟固体火箭",
+   "share": 0.6,
+   "share_basis": "碳/碳喉衬",
+   "share_src": "推断"
+  },
+  {
+   "from": "中国卫星",
+   "to": "千帆/国网星座",
+   "what": "空间太阳电池",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "上半年交付超73万片",
+   "share": null
+  },
+  {
+   "from": "长江通信",
+   "to": "低轨卫星",
+   "what": "地面管控/指挥系统",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "上海沪工",
+   "to": "商业卫星",
+   "what": "卫星总装集成（500kg 级）",
+   "source": "笔记",
+   "conf": "verified",
+   "share": null
+  },
+  {
+   "from": "邵阳液压",
+   "to": "商业火箭",
+   "what": "航天锻件/回收姿态",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "拟6亿收购新承航锐",
+   "share": null
+  },
+  {
+   "from": "三星",
+   "to": "英伟达",
+   "what": "HBM",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.33,
+   "share_basis": "HBM三强均分假设",
+   "share_src": "推断"
+  },
+  {
+   "from": "SK海力士",
+   "to": "英伟达",
+   "what": "HBM",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.45,
+   "share_basis": "HBM龙头",
+   "share_src": "Counterpoint口径推断"
+  },
+  {
+   "from": "美光",
+   "to": "英伟达",
+   "what": "HBM/DRAM（长协模式）",
+   "source": "笔记",
+   "conf": "verified",
+   "share": 0.22,
+   "share_basis": "HBM第三",
+   "share_src": "推断"
+  },
+  {
+   "from": "Lumentum",
+   "to": "源杰科技",
+   "what": "EML 芯片（外购/对标）",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "真正缺的是DSP、光芯片、磷化铟衬底",
+   "share": null
+  },
+  {
+   "from": "光智科技",
+   "to": "中际旭创",
+   "what": "磷化铟衬底 12万片/年",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "国内云南厂15万片/年、光智科技12万片/年",
+   "share": 0.3,
+   "share_basis": "国内产能12万片/年",
+   "share_src": "会议"
+  },
+  {
+   "from": "云南锗业",
+   "to": "中际旭创",
+   "what": "磷化铟衬底 15万片/年",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "国内云南厂15万片/年",
+   "share": 0.55,
+   "share_basis": "国内可外销产能占比",
+   "share_src": "新浪2026-08"
+  },
+  {
+   "from": "日本厂商",
+   "to": "Lumentum",
+   "what": "磷化铟衬底（其余产能）",
+   "source": "会议",
+   "conf": "inferred",
+   "ev": "其余在日本",
+   "share": null
+  },
+  {
+   "from": "源杰科技",
+   "to": "新易盛",
+   "what": "光芯片",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "中际旭创",
+   "to": "微软",
+   "what": "800G/1.6T 光模块",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "微软求白宫放开3.2T光模块进口",
+   "share": 0.28,
+   "share_basis": "全球光模块份额",
+   "share_src": "LightCounting"
+  },
+  {
+   "from": "新易盛",
+   "to": "北美云厂商",
+   "what": "800G 光模块",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "新易盛在北美云厂商供应链存在感强",
+   "share": 0.16,
+   "share_basis": "全球光模块份额",
+   "share_src": "LightCounting"
+  },
+  {
+   "from": "中际旭创",
+   "to": "英伟达",
+   "what": "光模块",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": 0.28,
+   "share_basis": "同上",
+   "share_src": "LightCounting"
+  },
+  {
+   "from": "丰田织机",
+   "to": "生益科技",
+   "what": "电子布织布机",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "全世界就两三家，丰田一年卖几千台",
+   "share": 0.5,
+   "share_basis": "织机全球2-3家",
+   "share_src": "会议"
+  },
+  {
+   "from": "生益科技",
+   "to": "沪电股份",
+   "what": "覆铜板",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "覆铜板=电子布+铜箔+环氧树脂",
+   "share": 0.14,
+   "share_basis": "全球刚性CCL份额",
+   "share_src": "新浪2026-07"
+  },
+  {
+   "from": "生益科技",
+   "to": "深南电路",
+   "what": "覆铜板",
+   "source": "会议",
+   "conf": "inferred",
+   "ev": "",
+   "share": 0.14,
+   "share_basis": "同上",
+   "share_src": "新浪2026-07"
+  },
+  {
+   "from": "沪电股份",
+   "to": "英伟达",
+   "what": "AI服务器 PCB",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "PCB龙头四家，门槛高",
+   "share": null
+  },
+  {
+   "from": "深南电路",
+   "to": "英伟达",
+   "what": "AI服务器 PCB",
+   "source": "会议",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "鹏鼎控股",
+   "to": "苹果",
+   "what": "FPC/PCB",
+   "source": "研报",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "铜箔厂商",
+   "to": "生益科技",
+   "what": "铜箔",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "覆铜板三大原料之一",
+   "share": null
+  },
+  {
+   "from": "环氧树脂厂商",
+   "to": "生益科技",
+   "what": "环氧树脂",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "覆铜板三大原料之一",
+   "share": null
+  },
+  {
+   "from": "三菱重工",
+   "to": "数据中心",
+   "what": "燃气轮机/柴油备用电源",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "涡轮叶片门槛高，排单已到2029年",
+   "share": 0.24,
+   "share_basis": "重型燃机份额",
+   "share_src": "东方财富2026-08"
+  },
+  {
+   "from": "英飞凌",
+   "to": "英伟达",
+   "what": "功率半导体",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "MPS",
+   "to": "英伟达",
+   "what": "电源管理芯片",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "麦格米特",
+   "to": "英伟达",
+   "what": "电源模块",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "欧陆通",
+   "to": "AI服务器厂商",
+   "what": "服务器电源",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "伟创力",
+   "to": "英伟达",
+   "what": "服务器代工",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "广达",
+   "to": "英伟达",
+   "what": "AI服务器代工",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "鸿海",
+   "to": "英伟达",
+   "what": "AI服务器代工",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "工业富联",
+   "to": "英伟达",
+   "what": "AI服务器代工",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "337调查涉及主体",
+   "share": null
+  },
+  {
+   "from": "润禾材料",
+   "to": "英伟达",
+   "what": "浸没式硅油冷却液",
+   "source": "笔记",
+   "conf": "inferred",
+   "ev": "硅油价格仅为氟化液的1/10",
+   "share": 0.5,
+   "share_basis": "国内浸没硅油",
+   "share_src": "东方财富2026-06"
+  },
+  {
+   "from": "3M",
+   "to": "氟化液市场",
+   "what": "氟化液（PFAS 受限）",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "氟化液受PFAS环保限制",
+   "share": 0.55,
+   "share_basis": "全球电子氟化液",
+   "share_src": "东方财富2026-06"
+  },
+  {
+   "from": "LG",
+   "to": "数据中心",
+   "what": "大型液冷/电源模块",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "美光",
+   "to": "AMD",
+   "what": "HBM/DRAM",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "大客户是英伟达，其次AMD、微软云",
+   "share": 0.3,
+   "share_basis": "DRAM/HBM",
+   "share_src": "推断"
+  },
+  {
+   "from": "SK海力士",
+   "to": "微软云",
+   "what": "HBM",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "长鑫存储",
+   "to": "国内手机厂商",
+   "what": "DRAM（2-3层）",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "国内只能做2-3层",
+   "share": null
+  },
+  {
+   "from": "长江存储",
+   "to": "国内手机厂商",
+   "what": "NAND",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "闪迪",
+   "to": "数据中心",
+   "what": "企业级 SSD",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "闪迪季度赚8亿，毛利85%",
+   "share": null
+  },
+  {
+   "from": "兆易创新",
+   "to": "模组厂",
+   "what": "NOR/DRAM 利基",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "中小客户被挤出原厂直采转向模组厂",
+   "share": null
+  },
+  {
+   "from": "绿的谐波",
+   "to": "人形机器人厂商",
+   "what": "谐波减速器",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "关键在灵巧手的小型减速电机",
+   "share": 0.275,
+   "share_basis": "国内份额",
+   "share_src": "东方财富2026-08"
+  },
+  {
+   "from": "三花智控",
+   "to": "人形机器人厂商",
+   "what": "机电执行器",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "拓普集团",
+   "to": "人形机器人厂商",
+   "what": "执行器/结构件",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "均胜电子",
+   "to": "人形机器人厂商",
+   "what": "机器人电子",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "特斯拉",
+   "to": "人形机器人厂商",
+   "what": "Optimus 整机",
+   "source": "笔记",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "中天火箭",
+   "to": "蓝箭航天",
+   "what": "固体发动机耐烧蚀组件",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": 0.4,
+   "share_basis": "固体发动机组件",
+   "share_src": "推断"
+  },
+  {
+   "from": "上海沪工",
+   "to": "千帆/国网星座",
+   "what": "卫星总装（500kg级）",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "中兵红箭",
+   "to": "商业火箭",
+   "what": "功能性金刚石（零部件加工）",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "九州云箭",
+   "to": "商业火箭",
+   "what": "液氧甲烷发动机",
+   "source": "图谱",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "中简科技",
+   "to": "商业火箭",
+   "what": "碳纤维复材",
+   "source": "图谱",
+   "conf": "verified",
+   "ev": "",
+   "share": 0.7,
+   "share_basis": "低轨碳纤维",
+   "share_src": "新浪2026-01"
+  },
+  {
+   "from": "光威复材",
+   "to": "商业火箭",
+   "what": "碳纤维复材",
+   "source": "图谱",
+   "conf": "verified",
+   "ev": "",
+   "share": 0.225,
+   "share_basis": "航天碳纤维",
+   "share_src": "新浪2026-01"
+  },
+  {
+   "from": "复旦微",
+   "to": "低轨卫星",
+   "what": "抗辐照 FPGA",
+   "source": "图谱",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "紫光国微",
+   "to": "低轨卫星",
+   "what": "抗辐照芯片",
+   "source": "图谱",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "星河动力",
+   "to": "商业火箭",
+   "what": "谷神星/智神星系列",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "天兵科技",
+   "to": "商业火箭",
+   "what": "天龙三号",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "星际荣耀",
+   "to": "商业火箭",
+   "what": "双曲线三号",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "寒武纪",
+   "to": "AI服务器厂商",
+   "what": "AI 加速卡",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "海光",
+   "to": "AI服务器厂商",
+   "what": "CPU/DCU",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "AMD",
+   "to": "AI服务器厂商",
+   "what": "GPU/CPU",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "AMD 6GW 从下半年起量",
+   "share": null
+  },
+  {
+   "from": "谷歌",
+   "to": "AI服务器厂商",
+   "what": "TPU",
+   "source": "会议",
+   "conf": "verified",
+   "ev": "谷歌TPU达5GW",
+   "share": null
+  },
+  {
+   "from": "华为",
+   "to": "国内云厂商",
+   "what": "昇腾芯片",
+   "source": "研报",
+   "conf": "inferred",
+   "ev": "",
+   "share": null
+  },
+  {
+   "from": "潜行创新",
+   "to": "海洋工程客户",
+   "what": "ROV 整机",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "海外占比超85%",
+   "share": null
+  },
+  {
+   "from": "中科深海所",
+   "to": "海洋观测平台",
+   "what": "FMTD 柔性传感器",
+   "source": "笔记",
+   "conf": "verified",
+   "ev": "最大下潜4812.2m",
+   "share": null
+  }
+ ],
+ "peers": {
+  "光模块/光芯片": [
+   "中际旭创",
+   "新易盛",
+   "天孚通信"
+  ],
+  "液冷散热": [
+   "润禾材料",
+   "英维克",
+   "飞荣达",
+   "超频三",
+   "思泉新材"
+  ],
+  "电源模块": [
+   "麦格米特",
+   "欧陆通",
+   "台达",
+   "立讯精密"
+  ],
+  "PCB与封装": [
+   "沪电股份",
+   "深南电路",
+   "鹏鼎控股",
+   "长电科技",
+   "通富微电",
+   "华天科技"
+  ],
+  "存储/内存": [
+   "美光",
+   "三星",
+   "SK海力士",
+   "长鑫存储",
+   "长江存储"
+  ],
+  "具身智能零部件": [
+   "拓普集团",
+   "三花智控",
+   "均胜电子",
+   "绿的谐波",
+   "双环传动",
+   "汇川技术"
+  ],
+  "商业航天": [
+   "蓝箭航天",
+   "星河动力",
+   "天兵科技",
+   "快舟航天",
+   "上海沪工",
+   "中国卫星"
+  ]
+ },
+ "chokepoints": {
+  "Lumentum": "磷化铟光芯片，订单排到 2029",
+  "博通": "光模块 DSP，依赖 5nm",
+  "Marvell": "光模块 DSP，依赖 5nm",
+  "云南锗业": "磷化铟衬底，国内唯一量产 2/4/6 寸",
+  "台积电": "晶圆 + 先进封装一鱼两吃，2027 涨价 3–6%",
+  "三星": "HBM 供给",
+  "SK海力士": "HBM 龙头",
+  "绿的谐波": "谐波减速器"
+ },
+ "degree": {
+  "Lumentum": {
+   "out": 3,
+   "in": 2
+  },
+  "中际旭创": {
+   "out": 2,
+   "in": 6
+  },
+  "新易盛": {
+   "out": 1,
+   "in": 3
+  },
+  "博通": {
+   "out": 2,
+   "in": 0
+  },
+  "Marvell": {
+   "out": 1,
+   "in": 0
+  },
+  "天孚通信": {
+   "out": 1,
+   "in": 0
+  },
+  "云南锗业": {
+   "out": 2,
+   "in": 0
+  },
+  "Vicor": {
+   "out": 2,
+   "in": 0
+  },
+  "工业富联": {
+   "out": 1,
+   "in": 1
+  },
+  "立讯精密": {
+   "out": 0,
+   "in": 1
+  },
+  "台达": {
+   "out": 1,
+   "in": 0
+  },
+  "英伟达": {
+   "out": 0,
+   "in": 18
+  },
+  "台积电": {
+   "out": 2,
+   "in": 0
+  },
+  "苹果": {
+   "out": 0,
+   "in": 2
+  },
+  "长电科技": {
+   "out": 1,
+   "in": 0
+  },
+  "通富微电": {
+   "out": 1,
+   "in": 0
+  },
+  "润禾材料": {
+   "out": 2,
+   "in": 0
+  },
+  "AI服务器厂商": {
+   "out": 0,
+   "in": 7
+  },
+  "英维克": {
+   "out": 1,
+   "in": 0
+  },
+  "绿的谐波": {
+   "out": 2,
+   "in": 0
+  },
+  "特斯拉": {
+   "out": 1,
+   "in": 4
+  },
+  "三花智控": {
+   "out": 2,
+   "in": 0
+  },
+  "拓普集团": {
+   "out": 2,
+   "in": 0
+  },
+  "均胜电子": {
+   "out": 2,
+   "in": 0
+  },
+  "汇川技术": {
+   "out": 1,
+   "in": 0
+  },
+  "人形机器人厂商": {
+   "out": 0,
+   "in": 7
+  },
+  "双环传动": {
+   "out": 1,
+   "in": 0
+  },
+  "昊志机电": {
+   "out": 1,
+   "in": 0
+  },
+  "蓝箭航天": {
+   "out": 0,
+   "in": 2
+  },
+  "中天火箭": {
+   "out": 2,
+   "in": 0
+  },
+  "商业火箭公司": {
+   "out": 0,
+   "in": 1
+  },
+  "博云新材": {
+   "out": 1,
+   "in": 0
+  },
+  "快舟火箭": {
+   "out": 0,
+   "in": 1
+  },
+  "中国卫星": {
+   "out": 1,
+   "in": 0
+  },
+  "千帆/国网星座": {
+   "out": 0,
+   "in": 2
+  },
+  "长江通信": {
+   "out": 1,
+   "in": 0
+  },
+  "低轨卫星": {
+   "out": 0,
+   "in": 3
+  },
+  "上海沪工": {
+   "out": 2,
+   "in": 0
+  },
+  "商业卫星": {
+   "out": 0,
+   "in": 1
+  },
+  "邵阳液压": {
+   "out": 1,
+   "in": 0
+  },
+  "商业火箭": {
+   "out": 0,
+   "in": 8
+  },
+  "三星": {
+   "out": 1,
+   "in": 0
+  },
+  "SK海力士": {
+   "out": 2,
+   "in": 0
+  },
+  "美光": {
+   "out": 2,
+   "in": 0
+  },
+  "源杰科技": {
+   "out": 1,
+   "in": 1
+  },
+  "光智科技": {
+   "out": 1,
+   "in": 0
+  },
+  "日本厂商": {
+   "out": 1,
+   "in": 0
+  },
+  "微软": {
+   "out": 0,
+   "in": 1
+  },
+  "北美云厂商": {
+   "out": 0,
+   "in": 1
+  },
+  "丰田织机": {
+   "out": 1,
+   "in": 0
+  },
+  "生益科技": {
+   "out": 2,
+   "in": 3
+  },
+  "沪电股份": {
+   "out": 1,
+   "in": 1
+  },
+  "深南电路": {
+   "out": 1,
+   "in": 1
+  },
+  "鹏鼎控股": {
+   "out": 1,
+   "in": 0
+  },
+  "铜箔厂商": {
+   "out": 1,
+   "in": 0
+  },
+  "环氧树脂厂商": {
+   "out": 1,
+   "in": 0
+  },
+  "三菱重工": {
+   "out": 1,
+   "in": 0
+  },
+  "数据中心": {
+   "out": 0,
+   "in": 3
+  },
+  "英飞凌": {
+   "out": 1,
+   "in": 0
+  },
+  "MPS": {
+   "out": 1,
+   "in": 0
+  },
+  "麦格米特": {
+   "out": 1,
+   "in": 0
+  },
+  "欧陆通": {
+   "out": 1,
+   "in": 0
+  },
+  "伟创力": {
+   "out": 1,
+   "in": 0
+  },
+  "广达": {
+   "out": 1,
+   "in": 0
+  },
+  "鸿海": {
+   "out": 1,
+   "in": 0
+  },
+  "3M": {
+   "out": 1,
+   "in": 0
+  },
+  "氟化液市场": {
+   "out": 0,
+   "in": 1
+  },
+  "LG": {
+   "out": 1,
+   "in": 0
+  },
+  "AMD": {
+   "out": 1,
+   "in": 1
+  },
+  "微软云": {
+   "out": 0,
+   "in": 1
+  },
+  "长鑫存储": {
+   "out": 1,
+   "in": 0
+  },
+  "国内手机厂商": {
+   "out": 0,
+   "in": 2
+  },
+  "长江存储": {
+   "out": 1,
+   "in": 0
+  },
+  "闪迪": {
+   "out": 1,
+   "in": 0
+  },
+  "兆易创新": {
+   "out": 1,
+   "in": 0
+  },
+  "模组厂": {
+   "out": 0,
+   "in": 1
+  },
+  "中兵红箭": {
+   "out": 1,
+   "in": 0
+  },
+  "九州云箭": {
+   "out": 1,
+   "in": 0
+  },
+  "中简科技": {
+   "out": 1,
+   "in": 0
+  },
+  "光威复材": {
+   "out": 1,
+   "in": 0
+  },
+  "复旦微": {
+   "out": 1,
+   "in": 0
+  },
+  "紫光国微": {
+   "out": 1,
+   "in": 0
+  },
+  "星河动力": {
+   "out": 1,
+   "in": 0
+  },
+  "天兵科技": {
+   "out": 1,
+   "in": 0
+  },
+  "星际荣耀": {
+   "out": 1,
+   "in": 0
+  },
+  "寒武纪": {
+   "out": 1,
+   "in": 0
+  },
+  "海光": {
+   "out": 1,
+   "in": 0
+  },
+  "谷歌": {
+   "out": 1,
+   "in": 0
+  },
+  "华为": {
+   "out": 1,
+   "in": 0
+  },
+  "国内云厂商": {
+   "out": 0,
+   "in": 1
+  },
+  "潜行创新": {
+   "out": 1,
+   "in": 0
+  },
+  "海洋工程客户": {
+   "out": 0,
+   "in": 1
+  },
+  "中科深海所": {
+   "out": 1,
+   "in": 0
+  },
+  "海洋观测平台": {
+   "out": 0,
+   "in": 1
+  }
+ },
+ "nodes": 94,
+ "stats": {
+  "edges": 89,
+  "nodes": 94,
+  "verified": 76,
+  "inferred": 13
+ },
+ "share_stats": {
+  "total_edges": 89,
+  "with_share": 34,
+  "without_share": 55
+ }
+}

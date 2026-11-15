@@ -1,0 +1,71 @@
+{
+ "design_rows": 496489,
+ "features": [
+  "VSTD20",
+  "VSTD10",
+  "AMT_MA5",
+  "VSUMD60",
+  "AMT_RATIO60",
+  "AMT_RATIO20",
+  "VMA60",
+  "MA60",
+  "MA20",
+  "CORR20",
+  "MA10",
+  "MIN5",
+  "MIN20",
+  "RET20",
+  "STD20",
+  "TURN5",
+  "KMID",
+  "LN_CAP"
+ ],
+ "train": 336747,
+ "valid": 78160,
+ "test": 81582,
+ "test_ic_mean": 0.07349834186880613,
+ "test_ic_n": 106,
+ "brier_cal": 0.2499632406533887,
+ "brier_raw": 0.24996363699224583,
+ "ece": 0.012774359989648112,
+ "platt": [
+  1.0027252651097054,
+  -0.002783859961788522
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "n_features": 18,
+   "train_ic": 0.05007320790787042,
+   "best_iter": 9
+  },
+  {
+   "round": 1,
+   "n_features": 18,
+   "train_ic": 0.05865161690376803,
+   "best_iter": 14
+  }
+ ],
+ "reliability": [
+  {
+   "bin": "0.4-0.5",
+   "n": 74002,
+   "pred": 0.49917086922908266,
+   "actual": 0.492202913434772,
+   "gap": -0.006967955794310643
+  },
+  {
+   "bin": "0.5-0.6",
+   "n": 7580,
+   "pred": 0.5008555182077974,
+   "actual": 0.5703166226912929,
+   "gap": 0.06946110448349552
+  }
+ ],
+ "ls_n": 106,
+ "ls_start": "2024-07-18",
+ "ls_end": "2026-09-15",
+ "ls_ann_net_overlap_adj": null,
+ "ls_sharpe_overlap_adj": null,
+ "ls_win_rate": 0.0
+}

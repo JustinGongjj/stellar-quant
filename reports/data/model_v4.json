@@ -1,0 +1,81 @@
+{
+ "design_rows": 389550,
+ "features": [
+  "KMID",
+  "LN_CAP",
+  "MA10",
+  "MA20",
+  "MA60",
+  "MA20_resid",
+  "MA60_resid",
+  "STD20",
+  "MIN5",
+  "MIN20",
+  "RET20",
+  "TURN5",
+  "VSTD20",
+  "VSTD20_resid",
+  "AMT_RATIO60",
+  "AMT_RATIO60_resid",
+  "VMA60",
+  "VSUMD60",
+  "CORR20"
+ ],
+ "test_ic": 0.07575130199189634,
+ "test_ic_n": 105,
+ "brier_cal": 0.2499814889752506,
+ "brier_raw": 0.24998126382416905,
+ "ece": 0.003734560574578302,
+ "platt": [
+  1.00147125929418,
+  -0.002631500714990483
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "n_features": 19,
+   "train_ic": 0.04737305325409529,
+   "best_iter": 9
+  },
+  {
+   "round": 1,
+   "n_features": 19,
+   "train_ic": 0.06030653906072378,
+   "best_iter": 7
+  }
+ ],
+ "backtests": {
+  "baseline": {
+   "n": 105,
+   "turnover": 0.6933333333333334,
+   "ann_net_overlap_adj": 0.13271149009017819,
+   "sharpe": 1.7025689106558368,
+   "ann_gross": 0.7237249883061002,
+   "win": 0.6666666666666666
+  },
+  "smooth": {
+   "n": 105,
+   "turnover": 0.42838095238095236,
+   "ann_net_overlap_adj": 0.09250397413256031,
+   "sharpe": 1.0352511823503627,
+   "ann_gross": 0.5163592504520094,
+   "win": 0.6285714285714286
+  },
+  "buffer": {
+   "n": 105,
+   "turnover": 0.5986666666666667,
+   "ann_net_overlap_adj": 0.13204318833184112,
+   "sharpe": 1.658942452036553,
+   "ann_gross": 0.7224838836270182,
+   "win": 0.6761904761904762
+  },
+  "smooth_buffer": {
+   "n": 105,
+   "turnover": 0.3287619047619047,
+   "ann_net_overlap_adj": 0.08557322604986105,
+   "sharpe": 0.9350088065543583,
+   "ann_gross": 0.48232740729108625,
+   "win": 0.6
+  }
+ }
+}

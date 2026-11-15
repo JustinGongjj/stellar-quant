@@ -1,0 +1,110 @@
+[
+ {
+  "lookback": 3,
+  "map": "标准（滞胀回避）",
+  "new_rate": 0.401,
+  "old_rate": 0.525,
+  "n": 177,
+  "new_hit": 71,
+  "old_hit": 93
+ },
+ {
+  "lookback": 3,
+  "map": "全部做多",
+  "new_rate": 0.508,
+  "old_rate": 0.508,
+  "n": 177,
+  "new_hit": 90,
+  "old_hit": 90
+ },
+ {
+  "lookback": 3,
+  "map": "反向（滞胀做多）",
+  "new_rate": 0.367,
+  "old_rate": 0.475,
+  "n": 177,
+  "new_hit": 65,
+  "old_hit": 84
+ },
+ {
+  "lookback": 3,
+  "map": "仅货币维度",
+  "new_rate": 0.508,
+  "old_rate": 0.525,
+  "n": 177,
+  "new_hit": 90,
+  "old_hit": 93
+ },
+ {
+  "lookback": 6,
+  "map": "标准（滞胀回避）",
+  "new_rate": 0.39,
+  "old_rate": 0.525,
+  "n": 177,
+  "new_hit": 69,
+  "old_hit": 93
+ },
+ {
+  "lookback": 6,
+  "map": "全部做多",
+  "new_rate": 0.508,
+  "old_rate": 0.508,
+  "n": 177,
+  "new_hit": 90,
+  "old_hit": 90
+ },
+ {
+  "lookback": 6,
+  "map": "反向（滞胀做多）",
+  "new_rate": 0.328,
+  "old_rate": 0.475,
+  "n": 177,
+  "new_hit": 58,
+  "old_hit": 84
+ },
+ {
+  "lookback": 6,
+  "map": "仅货币维度",
+  "new_rate": 0.565,
+  "old_rate": 0.525,
+  "n": 177,
+  "new_hit": 100,
+  "old_hit": 93
+ },
+ {
+  "lookback": 12,
+  "map": "标准（滞胀回避）",
+  "new_rate": 0.395,
+  "old_rate": 0.48,
+  "n": 177,
+  "new_hit": 70,
+  "old_hit": 85
+ },
+ {
+  "lookback": 12,
+  "map": "全部做多",
+  "new_rate": 0.508,
+  "old_rate": 0.508,
+  "n": 177,
+  "new_hit": 90,
+  "old_hit": 90
+ },
+ {
+  "lookback": 12,
+  "map": "反向（滞胀做多）",
+  "new_rate": 0.35,
+  "old_rate": 0.52,
+  "n": 177,
+  "new_hit": 62,
+  "old_hit": 92
+ },
+ {
+  "lookback": 12,
+  "map": "仅货币维度",
+  "new_rate": 0.565,
+  "old_rate": 0.48,
+  "n": 177,
+  "new_hit": 100,
+  "old_hit": 85
+ }
+]

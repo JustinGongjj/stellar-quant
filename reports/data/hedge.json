@@ -1,0 +1,35 @@
+{
+ "hs300": {
+  "n": 105,
+  "beta_mean": 1.1074198693162185,
+  "unhedged_ann": 0.07717352563376288,
+  "hedged_ann": 0.033128977897301674,
+  "hedged_sharpe": 0.62697803629661,
+  "hedged_ann_with_basis": 0.023128977897301676,
+  "hedged_sharpe_with_basis": 0.4377243749732171,
+  "hedged_max_dd": -0.24629203524210186,
+  "hedged_max_dd_with_basis": -0.25644973534775506
+ },
+ "zz500": {
+  "n": 105,
+  "beta_mean": 0.4793147021695034,
+  "unhedged_ann": 0.07717352563376288,
+  "hedged_ann": 0.03890595035413598,
+  "hedged_sharpe": 0.6320857097683262,
+  "hedged_ann_with_basis": 0.028905950354135977,
+  "hedged_sharpe_with_basis": 0.46962066161634575,
+  "hedged_max_dd": -0.21608490663879698,
+  "hedged_max_dd_with_basis": -0.22478716988672076
+ },
+ "zz1000": {
+  "n": 105,
+  "beta_mean": 0.44612875605217683,
+  "unhedged_ann": 0.07717352563376288,
+  "hedged_ann": 0.030381313717293145,
+  "hedged_sharpe": 0.44343961266176063,
+  "hedged_ann_with_basis": 0.020381313717293136,
+  "hedged_sharpe_with_basis": 0.2974816015013171,
+  "hedged_max_dd": -0.26379566291882783,
+  "hedged_max_dd_with_basis": -0.2683966663480478
+ }
+}

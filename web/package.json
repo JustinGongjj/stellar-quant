@@ -1,0 +1,8 @@
+{
+  "name": "stellar-starmap-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "星图前置页静态服务（零依赖）",
+  "main": "server/app.js",
+  "scripts": { "start": "node server/app.js" }
+}

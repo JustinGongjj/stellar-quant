@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>势 · 数 ｜ 开机</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:#05080c;overflow:hidden;
+    font-family:-apple-system,"PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+  canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+
+  /* ---------- 文字层 ---------- */
+  .stage{position:fixed;inset:0;padding-bottom:9vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;pointer-events:none;z-index:3}
+  .line.first{font-size:clamp(15px,2.3vw,30px);letter-spacing:.30em}
+  .line.second{font-size:clamp(14px,2.1vw,27px);letter-spacing:.30em;margin-top:.55em;color:#9fc0d2}
+  .line{font-size:clamp(19px,3.1vw,40px);letter-spacing:.34em;color:#cfe6f2;
+    opacity:0;transform:translateY(14px);filter:blur(6px);
+    text-shadow:0 0 26px rgba(95,224,232,.30);white-space:nowrap;padding-left:.34em}
+  .line em{font-style:normal;color:#5fe0e8;text-shadow:0 0 30px rgba(95,224,232,.75)}
+  .line .dim{color:#7fa0b4}
+  .line.motto{margin-top:.42em;font-size:clamp(26px,4.6vw,62px);letter-spacing:.10em;color:#fff;
+    text-shadow:0 0 44px rgba(255,180,120,.55),0 0 90px rgba(255,120,80,.28)}
+  .line.motto b{font-weight:600;background:linear-gradient(96deg,#ffb066,#ff7a5c 42%,#5fe0e8 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{margin-top:34px;font-size:clamp(9px,1.05vw,12px);letter-spacing:.62em;
+    color:#4b6b7d;opacity:0;text-transform:uppercase;padding-left:.62em}
+  .show{animation:rise .95s cubic-bezier(.17,.84,.34,1) forwards}
+  .show-late{animation:rise 1.1s cubic-bezier(.17,.84,.34,1) .25s forwards}
+  @keyframes rise{to{opacity:1;transform:translateY(0);filter:blur(0)}}
+  .fadeout{animation:fade .7s ease forwards}
+  @keyframes fade{to{opacity:0;transform:scale(1.035);filter:blur(9px)}}
+
+  /* ---------- 进度与跳过 ---------- */
+  .bar{position:fixed;left:50%;bottom:56px;transform:translateX(-50%);
+    width:min(300px,52vw);height:1px;background:rgba(120,170,195,.16);z-index:4;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#5fe0e8,#ffb066);
+    box-shadow:0 0 12px rgba(95,224,232,.85);transition:width .28s linear}
+  .skip{position:fixed;right:26px;bottom:44px;z-index:5;font-size:10.5px;letter-spacing:.28em;
+    color:#5a7b8c;cursor:pointer;padding:10px 16px;border:1px solid rgba(120,170,195,.22);
+    border-radius:20px;transition:.25s;background:rgba(5,8,12,.4);backdrop-filter:blur(6px)}
+  .skip:hover{color:#cfe6f2;border-color:rgba(95,224,232,.6);box-shadow:0 0 22px rgba(95,224,232,.22)}
+  .brand{position:fixed;left:26px;top:22px;z-index:5;font-size:10px;letter-spacing:.4em;color:#39566a}
+  .brand b{color:#7fa0b4;font-weight:500}
+
+  @media (prefers-reduced-motion:reduce){.line,.sub{animation:none!important;opacity:1;filter:none;transform:none}}
+  @media (max-width:600px){
+    .line{letter-spacing:.22em;padding-left:.22em}
+    .line.motto{letter-spacing:.3em}
+    .bar{bottom:78px}
+    .skip{bottom:26px;right:16px}
+  }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="brand">势 · 数 ｜ <b>FUTURE ATLAS</b></div>
+
+<div class="stage">
+  <div class="line first" id="l1">在 <em>确定</em> 与 <span class="dim">不确定</span> 之间</div>
+  <div class="line second" id="l2">寻找平衡与发展</div>
+  <div class="line motto" id="l3"><b>和 而 不 同</b></div>
+  <div class="sub" id="l4">BALANCE · NOT PREDICTION</div>
+</div>
+
+<div class="bar"><i id="prog"></i></div>
+<div class="skip" id="skip">跳过 SKIP</div>
+
+<script>
+"use strict";
+const cv = document.getElementById('c');
+const ctx = cv.getContext('2d', { alpha:false });
+let W=0, H=0, DPR=1;
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2);
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = Math.floor(W*DPR); cv.height = Math.floor(H*DPR);
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+resize();
+window.addEventListener('resize', resize);
+
+// 确定性随机（同一次开机画面一致，避免每次都是不同的噪声）
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* =========================================================
+   设计叙事（约 6.4 秒）
+   ─────────────────────────────────────────────────────────
+   0.0–1.5s  惑：一片混沌粒子，无方向，明暗随机
+   1.5–3.0s  分：粒子按「确定」分裂为两股反向流
+              —— 一股是规则的点阵（确定），一股是游移的波动（不确定）
+   3.0–4.7s  衡：两股流对旋，形成天平式平衡；中央生出一个核
+   4.7–6.4s  合：两股流汇成一环，但各自颜色不融合 —— 和而不同
+   ========================================================= */
+
+const N = (W<700) ? 900 : 1700;
+const rnd = mulberry32(20261115);
+const P = [];
+const cx = () => W/2, cy = () => H/2;
+
+for(let i=0;i<N;i++){
+  const ring = rnd();
+  P.push({
+    seed: rnd(),
+    // 始于一个致密的云
+    x0: (rnd()-0.5)*Math.min(W,H)*0.62,
+    y0: (rnd()-0.5)*Math.min(W,H)*0.62,
+    // 两个归宿：A=确定(刚硬点阵)，B=不确定(游移)
+    // 同一颗粒子在最后阶段同时属于两股，只是"显色"不同
+    a: rnd()*Math.PI*2,
+    r: 0.18 + ring*0.82,
+    // 点阵格子位置（确定）
+    gx: (Math.floor(rnd()*13)-6),
+    gy: (Math.floor(rnd()*9)-4),
+    // 波动相位（不确定）
+    ph: rnd()*Math.PI*2,
+    sp: 0.5 + rnd()*1.4,
+    size: 0.6 + rnd()*1.5,
+    side: rnd()<0.5 ? 0 : 1,      // 0=确定方, 1=不确定方
+    tw: rnd()*Math.PI*2
+  });
+}
+
+const ease = t => t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+const clamp01 = v => v<0?0:v>1?1:v;
+const lerp = (a,b,t)=>a+(b-a)*t;
+
+function rgba(r,g,b,a){return `rgba(${r|0},${g|0},${b|0},${a})`}
+
+// 颜色：确定=冷青  不确定=暖橙
+const COLD=[95,224,232], WARM=[255,176,102];
+
+let t0 = performance.now();
+let done = false;
+
+function draw(now){
+  const t = (now - t0)/1000;             // 秒
+  const cxx = cx(), cyy = cy();
+  const R = Math.min(W,H);
+
+  ctx.fillStyle = '#05080c';
+  ctx.fillRect(0,0,W,H);
+
+  // ---------- 阶段权重 ----------
+  const pSplit = ease(clamp01((t-0.95)/1.05));   // 分裂（更早）
+  const pBal   = ease(clamp01((t-1.75)/1.35));    // 平衡
+  const pJoin  = ease(clamp01((t-3.85)/1.75));    // 汇合
+  const pChaos = 1 - pSplit*0.85;
+
+  ctx.globalCompositeOperation = 'lighter';
+
+  // ---------- 中央核 ----------
+  const coreR = 2 + pBal*3.2 + pJoin*2.4;
+  const coreA = 0.30 + 0.55*pBal + 0.15*pJoin;
+  const cg = ctx.createRadialGradient(cxx,cyy,0,cxx,cyy,coreR*26);
+  cg.addColorStop(0, rgba(255,255,255,0.92*coreA));
+  cg.addColorStop(0.22, rgba(255,214,170,0.55*coreA));
+  cg.addColorStop(0.55, rgba(95,224,232,0.16*coreA));
+  cg.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = cg;
+  ctx.beginPath(); ctx.arc(cxx,cyy,coreR*26,0,6.283); ctx.fill();
+
+  // ---------- 粒子 ----------
+  const orbit = R*0.30;
+  for(let i=0;i<N;i++){
+    const p = P[i];
+
+    // 混沌位置
+    const chaX = cxx + p.x0 + Math.sin(now*0.0004 + p.ph)*14;
+    const chaY = cyy + p.y0 + Math.cos(now*0.0005 + p.ph)*14;
+
+    // 平衡期：两股对旋的流
+    const dir = p.side ? 1 : -1;
+    const spin = p.a + dir * (0.55 + p.sp*0.5) * pBal + 0.25*(now*0.00022);
+    const rr = p.r * orbit * (0.42 + 0.58*pBal);
+    // 确定方压扁成椭圆（有规则），不确定方保持圆（无规则）
+    const squash = p.side ? 1.0 : 0.62;
+    let balX = cxx + Math.cos(spin) * rr;
+    let balY = cyy + Math.sin(spin) * rr * squash;
+    // 确定方吸附到网格（刚硬）
+    if(!p.side){
+      const gs = R*0.028;
+      const snap = pBal*0.55;
+      balX = lerp(balX, cxx + p.gx*gs, snap);
+      balY = lerp(balY, cyy + p.gy*gs, snap);
+    } else {
+      balX += Math.sin(now*0.0011 + p.ph)*5*pBal;
+      balY += Math.cos(now*0.0009 + p.ph)*5*pBal;
+    }
+
+    // 汇合期：成环，但两色不混
+    const ang = p.a + (p.side? 1:-1)*0.16 + 0.12*(now*0.0003);
+    const ringR = orbit*(1.02 + Math.sin(p.a*3+p.ph*0.4)*0.055);
+    const joinX = cxx + Math.cos(ang)*ringR;
+    const joinY = cyy + Math.sin(ang)*ringR*0.94;
+
+    // 分裂过渡态：两股分别向左右两侧甩开，形成明显的「分」
+    const sideSign = p.side ? 1 : -1;
+    const splitX = cxx + sideSign*R*0.26 + p.x0*0.35
+                   + Math.sin(now*0.0008 + p.ph)*10;
+    const splitY = cyy + p.y0*0.55 + Math.cos(now*0.0007 + p.ph)*18;
+
+    // 混合：混沌 → 分裂 → 平衡 → 汇合
+    let x = lerp(chaX, splitX, pSplit);
+    let y = lerp(chaY, splitY, pSplit);
+    x = lerp(x, balX, pBal);
+    y = lerp(y, balY, pBal);
+    x = lerp(x, joinX, pJoin);
+    y = lerp(y, joinY, pJoin);
+
+    // 颜色：确定方冷青、不确定方暖橙
+    const col = p.side ? WARM : COLD;
+    let alpha = 0.10 + 0.34*pChaos + 0.34*pBal + 0.22*pJoin;
+    alpha *= 0.55 + 0.45*Math.sin(now*0.0016*p.sp + p.tw);
+    if(!p.side) alpha *= 1.12;
+
+    const s = p.size * (0.85 + 0.42*pBal);
+    ctx.fillStyle = rgba(col[0],col[1],col[2], clamp01(alpha));
+    ctx.beginPath(); ctx.arc(x,y,s,0,6.283); ctx.fill();
+
+    // 平衡期给「确定」方画极细的网格连线（秩序感）
+    if(!p.side && pBal>0.22 && (i%7===0)){
+      const gs = R*0.028, nx = cxx + p.gx*gs, ny = cyy + p.gy*gs;
+      ctx.strokeStyle = rgba(col[0],col[1],col[2], 0.055*pBal);
+      ctx.lineWidth = 0.6;
+      ctx.beginPath(); ctx.moveTo(cxx+ (p.gx-1)*gs, cyy+p.gy*gs); ctx.lineTo(nx,ny); ctx.stroke();
+    }
+  }
+
+  // ---------- 分裂期：左右两道对置的光晕 ----------
+  if(pSplit>0.05 && pJoin<0.5){
+    const a1 = 0.20*pSplit*(1-pJoin);
+    for(const side of [-1, 1]){
+      const col = side>0 ? WARM : COLD;
+      const gx = cxx + side*R*0.26;
+      const g = ctx.createRadialGradient(gx,cyy,0,gx,cyy,R*0.34);
+      g.addColorStop(0, rgba(col[0],col[1],col[2], a1));
+      g.addColorStop(0.5, rgba(col[0],col[1],col[2], a1*0.28));
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(gx,cyy,R*0.34,0,6.283); ctx.fill();
+    }
+  }
+
+  // ---------- 汇合期：一道纤细的光环 ----------
+  if(pJoin>0.02){
+    ctx.strokeStyle = rgba(255,224,196, 0.16*pJoin);
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.ellipse(cxx,cyy,orbit*1.04,orbit*0.98,0,0,6.283); ctx.stroke();
+    // 环上跑一个亮点
+    const a2 = now*0.0013;
+    const lx = cxx+Math.cos(a2)*orbit*1.04, ly = cyy+Math.sin(a2)*orbit*0.98;
+    const g2 = ctx.createRadialGradient(lx,ly,0,lx,ly,26);
+    g2.addColorStop(0, rgba(255,240,220,0.75*pJoin));
+    g2.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g2; ctx.beginPath(); ctx.arc(lx,ly,26,0,6.283); ctx.fill();
+  }
+
+  ctx.globalCompositeOperation = 'source-over';
+
+  // ---------- 暗角 ----------
+  const vg = ctx.createRadialGradient(cxx,cyy,R*0.18,cxx,cyy,R*0.92);
+  vg.addColorStop(0,'rgba(0,0,0,0)');
+  vg.addColorStop(1,'rgba(0,0,0,0.72)');
+  ctx.fillStyle = vg; ctx.fillRect(0,0,W,H);
+
+  if(!done) requestAnimationFrame(draw);
+}
+
+/* ---------- 文字与进度编排 ---------- */
+const l1=document.getElementById('l1'), l2=document.getElementById('l2'),
+      l3=document.getElementById('l3'), prog=document.getElementById('prog'),
+      skip=document.getElementById('skip');
+const TOTAL = 6400;
+
+const l4=document.getElementById('l4');
+const timers=[
+  setTimeout(()=>l1.classList.add('show'), 620),      // 在确定与不确定之间
+  setTimeout(()=>l2.classList.add('show'), 1750),     // 寻找平衡与发展
+  setTimeout(()=>l3.classList.add('show'), 3050),     // 和而不同
+  setTimeout(()=>l4.classList.add('show-late'), 3750),// 英文副标
+];
+let pct=0;
+const tick=setInterval(()=>{ pct=Math.min(100,pct+100/(TOTAL/280)); prog.style.width=pct+'%'; }, 280);
+setTimeout(()=>clearInterval(tick), TOTAL);
+
+function go(){
+  if(done) return;
+  done=true;
+  clearInterval(tick);
+  timers.forEach(clearTimeout);
+  document.querySelector('.stage').classList.add('fadeout');
+  document.querySelector('.bar').style.opacity='0';
+  skip.style.opacity='0';
+  setTimeout(()=>{
+    // 默认进未来星图；带 ?to= 时跳指定页面
+    const q = new URLSearchParams(location.search);
+    const to = q.get('to') || 'atlas.html';
+    const track = q.get('track');
+    location.replace(track ? `${to}?track=${encodeURIComponent(track)}` : to);
+  }, 620);
+}
+
+skip.addEventListener('click', go);
+window.addEventListener('keydown', e=>{ if(e.key==='Escape'||e.key==='Enter'||e.key===' ') go(); });
+setTimeout(go, TOTAL);
+
+requestAnimationFrame(draw);
+</script>
+</body>
+</html>

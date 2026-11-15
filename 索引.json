@@ -1,0 +1,1454 @@
+[
+ {
+  "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+  "kb": 0.3
+ },
+ {
+  "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+  "kb": 0.3
+ },
+ {
+  "path": ".github/PULL_REQUEST_TEMPLATE.md",
+  "kb": 0.3
+ },
+ {
+  "path": ".gitignore",
+  "kb": 0.4
+ },
+ {
+  "path": "CHANGELOG.md",
+  "kb": 1.2
+ },
+ {
+  "path": "CONTRIBUTING.md",
+  "kb": 1.1
+ },
+ {
+  "path": "LICENSE",
+  "kb": 1.0
+ },
+ {
+  "path": "README.md",
+  "kb": 7.1
+ },
+ {
+  "path": "docs/CHAN_STARMAP_INTEGRATION.md",
+  "kb": 17.9
+ },
+ {
+  "path": "docs/ENV_NUMERIC_BUG.md",
+  "kb": 2.9
+ },
+ {
+  "path": "docs/STATUS.md",
+  "kb": 2.5
+ },
+ {
+  "path": "knowledge/industry_notes_2026-11.md",
+  "kb": 9.9
+ },
+ {
+  "path": "knowledge/macro/世界银行WDI_年度长序列.csv",
+  "kb": 23.7
+ },
+ {
+  "path": "knowledge/macro/公开渠道补充_年度长序列.csv",
+  "kb": 12.1
+ },
+ {
+  "path": "knowledge/macro/宏观周期_时间序列_长表.csv",
+  "kb": 83.1
+ },
+ {
+  "path": "knowledge/macro/指标字典.csv",
+  "kb": 1.2
+ },
+ {
+  "path": "knowledge/macro/数据获取报告.md",
+  "kb": 8.4
+ },
+ {
+  "path": "knowledge/nvidia_ceo_meeting_2026-11-14.md",
+  "kb": 9.6
+ },
+ {
+  "path": "knowledge/supply_share_2026-11.md",
+  "kb": 5.5
+ },
+ {
+  "path": "pyproject.toml",
+  "kb": 1.0
+ },
+ {
+  "path": "reports/AI叙事与政治利益链.md",
+  "kb": 5.8
+ },
+ {
+  "path": "reports/UI质检报告_星图.md",
+  "kb": 4.0
+ },
+ {
+  "path": "reports/data/atlas_data.json",
+  "kb": 224.8
+ },
+ {
+  "path": "reports/data/backtest.json",
+  "kb": 0.3
+ },
+ {
+  "path": "reports/data/backtest.log",
+  "kb": 0.4
+ },
+ {
+  "path": "reports/data/backtest_periods.csv",
+  "kb": 5.6
+ },
+ {
+  "path": "reports/data/backtest_summary.json",
+  "kb": 0.7
+ },
+ {
+  "path": "reports/data/backtest_v3.csv",
+  "kb": 6.4
+ },
+ {
+  "path": "reports/data/backtest_v3.json",
+  "kb": 0.5
+ },
+ {
+  "path": "reports/data/backtest_v3.log",
+  "kb": 0.5
+ },
+ {
+  "path": "reports/data/build_events.log",
+  "kb": 2.7
+ },
+ {
+  "path": "reports/data/build_fund.log",
+  "kb": 1.0
+ },
+ {
+  "path": "reports/data/build_tencent.log",
+  "kb": 0.0
+ },
+ {
+  "path": "reports/data/chan_bi_area_backtest.csv",
+  "kb": 5.1
+ },
+ {
+  "path": "reports/data/chan_bi_area_backtest_final.csv",
+  "kb": 5.1
+ },
+ {
+  "path": "reports/data/chan_state_ic.txt",
+  "kb": 3.2
+ },
+ {
+  "path": "reports/data/chanlun_feats.parquet",
+  "kb": 150.9
+ },
+ {
+  "path": "reports/data/chanlun_feats_info.json",
+  "kb": 0.2
+ },
+ {
+  "path": "reports/data/chanlun_ic.json",
+  "kb": 0.9
+ },
+ {
+  "path": "reports/data/chanlun_ic_nolookahead.json",
+  "kb": 0.9
+ },
+ {
+  "path": "reports/data/clock_assets.json",
+  "kb": 1.7
+ },
+ {
+  "path": "reports/data/clock_china_report.json",
+  "kb": 2.4
+ },
+ {
+  "path": "reports/data/clock_china_v2.json",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/clock_filter.json",
+  "kb": 1.0
+ },
+ {
+  "path": "reports/data/clock_filter_robust.json",
+  "kb": 1.5
+ },
+ {
+  "path": "reports/data/clock_history.csv",
+  "kb": 18.9
+ },
+ {
+  "path": "reports/data/clock_model.json",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/clock_model_periods.csv",
+  "kb": 10.3
+ },
+ {
+  "path": "reports/data/clock_retest_wind.json",
+  "kb": 0.6
+ },
+ {
+  "path": "reports/data/clock_sensitivity.json",
+  "kb": 1.7
+ },
+ {
+  "path": "reports/data/combo.json",
+  "kb": 1.2
+ },
+ {
+  "path": "reports/data/cta_trend.json",
+  "kb": 4.7
+ },
+ {
+  "path": "reports/data/deep_analysis.json",
+  "kb": 3.3
+ },
+ {
+  "path": "reports/data/delist_proxy.json",
+  "kb": 0.1
+ },
+ {
+  "path": "reports/data/delisted_check.csv",
+  "kb": 6.8
+ },
+ {
+  "path": "reports/data/design.log",
+  "kb": 0.0
+ },
+ {
+  "path": "reports/data/doc_analysis.json",
+  "kb": 208.8
+ },
+ {
+  "path": "reports/data/domains/lowalt.json",
+  "kb": 8.1
+ },
+ {
+  "path": "reports/data/entity_graph.json",
+  "kb": 21.4
+ },
+ {
+  "path": "reports/data/event_factors.csv",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/event_oos.json",
+  "kb": 0.7
+ },
+ {
+  "path": "reports/data/event_signal_backtest.json",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/event_signal_backtest2.json",
+  "kb": 1.3
+ },
+ {
+  "path": "reports/data/execution_cap.json",
+  "kb": 3.3
+ },
+ {
+  "path": "reports/data/execution_cost.json",
+  "kb": 2.5
+ },
+ {
+  "path": "reports/data/factor_corr.csv",
+  "kb": 7.9
+ },
+ {
+  "path": "reports/data/factor_corr.json",
+  "kb": 9.4
+ },
+ {
+  "path": "reports/data/factor_mine.log",
+  "kb": 2.9
+ },
+ {
+  "path": "reports/data/factor_mine_h5_partial.csv",
+  "kb": 1.8
+ },
+ {
+  "path": "reports/data/factor_screen_h5.csv",
+  "kb": 9.5
+ },
+ {
+  "path": "reports/data/factor_screen_h5_raw.csv",
+  "kb": 7.1
+ },
+ {
+  "path": "reports/data/five_faces_info.json",
+  "kb": 1.2
+ },
+ {
+  "path": "reports/data/five_faces_latest.parquet",
+  "kb": 490.4
+ },
+ {
+  "path": "reports/data/five_faces_test.json",
+  "kb": 0.3
+ },
+ {
+  "path": "reports/data/forecast.json",
+  "kb": 11.9
+ },
+ {
+  "path": "reports/data/forecast_synthesis.json",
+  "kb": 3.5
+ },
+ {
+  "path": "reports/data/fund_factors.csv",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/fund_factors.log",
+  "kb": 1.3
+ },
+ {
+  "path": "reports/data/hedge.json",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/impact_forecast.json",
+  "kb": 4.2
+ },
+ {
+  "path": "reports/data/impact_forecast_v2.json",
+  "kb": 3.8
+ },
+ {
+  "path": "reports/data/impact_forecast_v3.json",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/data/industry_cycle.json",
+  "kb": 1.9
+ },
+ {
+  "path": "reports/data/industry_cycle_payload.json",
+  "kb": 4.4
+ },
+ {
+  "path": "reports/data/industry_cycle_sens.json",
+  "kb": 1.7
+ },
+ {
+  "path": "reports/data/industry_deepdive.json",
+  "kb": 5.2
+ },
+ {
+  "path": "reports/data/industry_filter_test.json",
+  "kb": 0.1
+ },
+ {
+  "path": "reports/data/industry_index.parquet",
+  "kb": 328.7
+ },
+ {
+  "path": "reports/data/industry_members.json",
+  "kb": 13.4
+ },
+ {
+  "path": "reports/data/industry_risk.json",
+  "kb": 5.3
+ },
+ {
+  "path": "reports/data/leadtime.json",
+  "kb": 1.3
+ },
+ {
+  "path": "reports/data/limitup.json",
+  "kb": 1.3
+ },
+ {
+  "path": "reports/data/limitup.log",
+  "kb": 1.4
+ },
+ {
+  "path": "reports/data/limitup_fill.json",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/limitup_fill.log",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/long_only.csv",
+  "kb": 12.8
+ },
+ {
+  "path": "reports/data/long_only.json",
+  "kb": 0.6
+ },
+ {
+  "path": "reports/data/long_only.log",
+  "kb": 0.6
+ },
+ {
+  "path": "reports/data/long_only_sens.json",
+  "kb": 1.8
+ },
+ {
+  "path": "reports/data/long_only_sens.log",
+  "kb": 1.8
+ },
+ {
+  "path": "reports/data/macro_state_model.json",
+  "kb": 0.3
+ },
+ {
+  "path": "reports/data/model_run.log",
+  "kb": 0.0
+ },
+ {
+  "path": "reports/data/model_test.json",
+  "kb": 0.7
+ },
+ {
+  "path": "reports/data/model_train.log",
+  "kb": 0.5
+ },
+ {
+  "path": "reports/data/model_v3.json",
+  "kb": 1.2
+ },
+ {
+  "path": "reports/data/model_v3.log",
+  "kb": 1.0
+ },
+ {
+  "path": "reports/data/model_v3_ls.csv",
+  "kb": 1.4
+ },
+ {
+  "path": "reports/data/model_v4.json",
+  "kb": 1.5
+ },
+ {
+  "path": "reports/data/model_v4.log",
+  "kb": 1.1
+ },
+ {
+  "path": "reports/data/model_v5.json",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/model_v5.log",
+  "kb": 0.0
+ },
+ {
+  "path": "reports/data/model_v6.json",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/new_listings_check.csv",
+  "kb": 15.9
+ },
+ {
+  "path": "reports/data/opt2_A.csv",
+  "kb": 11.5
+ },
+ {
+  "path": "reports/data/opt2_B.csv",
+  "kb": 11.5
+ },
+ {
+  "path": "reports/data/opt2_C.csv",
+  "kb": 11.5
+ },
+ {
+  "path": "reports/data/portfolio_opt.json",
+  "kb": 0.6
+ },
+ {
+  "path": "reports/data/portfolio_opt2.json",
+  "kb": 0.8
+ },
+ {
+  "path": "reports/data/portfolio_opt_A.csv",
+  "kb": 8.4
+ },
+ {
+  "path": "reports/data/portfolio_opt_B.csv",
+  "kb": 6.6
+ },
+ {
+  "path": "reports/data/portfolio_opt_C.csv",
+  "kb": 6.6
+ },
+ {
+  "path": "reports/data/portfolio_opt_cmp.csv",
+  "kb": 0.5
+ },
+ {
+  "path": "reports/data/report_metrics.json",
+  "kb": 0.5
+ },
+ {
+  "path": "reports/data/research_index.json",
+  "kb": 158.1
+ },
+ {
+  "path": "reports/data/resid.json",
+  "kb": 0.6
+ },
+ {
+  "path": "reports/data/resid.log",
+  "kb": 5.9
+ },
+ {
+  "path": "reports/data/sse_list.csv",
+  "kb": 76.1
+ },
+ {
+  "path": "reports/data/stock_codes.json",
+  "kb": 1.4
+ },
+ {
+  "path": "reports/data/stock_industry.json",
+  "kb": 37.6
+ },
+ {
+  "path": "reports/data/supply_graph.json",
+  "kb": 23.4
+ },
+ {
+  "path": "reports/data/survivorship.json",
+  "kb": 0.4
+ },
+ {
+  "path": "reports/data/turnover_capacity.json",
+  "kb": 3.3
+ },
+ {
+  "path": "reports/data/v5_factor_decay.csv",
+  "kb": 2.0
+ },
+ {
+  "path": "reports/data/wall_street_bets.json",
+  "kb": 3.6
+ },
+ {
+  "path": "reports/data/workbench_bundle.json",
+  "kb": 26.4
+ },
+ {
+  "path": "reports/phase10_组合层风险约束优化.md",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/phase11_对冲效果评估.md",
+  "kb": 3.3
+ },
+ {
+  "path": "reports/phase13_时钟过滤器与稳健性检验.md",
+  "kb": 4.6
+ },
+ {
+  "path": "reports/phase14_幸存者偏差量化.md",
+  "kb": 4.7
+ },
+ {
+  "path": "reports/phase15_执行成本与容量.md",
+  "kb": 5.0
+ },
+ {
+  "path": "reports/phase16_换手与容量权衡.md",
+  "kb": 4.2
+ },
+ {
+  "path": "reports/phase17_宏观特征与CTA趋势.md",
+  "kb": 6.0
+ },
+ {
+  "path": "reports/phase18_年化口径错误更正.md",
+  "kb": 4.9
+ },
+ {
+  "path": "reports/phase1_进度与吸收清单.md",
+  "kb": 6.2
+ },
+ {
+  "path": "reports/phase2_量化链路与数据可信度.md",
+  "kb": 5.6
+ },
+ {
+  "path": "reports/phase3_数据源梳理与数据层重建.md",
+  "kb": 5.3
+ },
+ {
+  "path": "reports/phase4_因子挖掘与模型改进.md",
+  "kb": 5.6
+ },
+ {
+  "path": "reports/phase5_残差化与打板龙头研究.md",
+  "kb": 6.4
+ },
+ {
+  "path": "reports/phase6_模型v4与换手控制.md",
+  "kb": 4.1
+ },
+ {
+  "path": "reports/phase7_多头端与冲击成本.md",
+  "kb": 3.8
+ },
+ {
+  "path": "reports/phase8_基本面接入与模型v5.md",
+  "kb": 5.0
+ },
+ {
+  "path": "reports/phase9_事件因子与模型v6.md",
+  "kb": 4.9
+ },
+ {
+  "path": "reports/两种优化范式.md",
+  "kb": 5.8
+ },
+ {
+  "path": "reports/事件信号回测.md",
+  "kb": 3.5
+ },
+ {
+  "path": "reports/产业框架与量化模型结合.md",
+  "kb": 4.0
+ },
+ {
+  "path": "reports/产业深度分析与瓶颈图谱.md",
+  "kb": 5.7
+ },
+ {
+  "path": "reports/传导时滞实测.md",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/供应链份额数据.md",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/冲击传导v2_累积与衰减.md",
+  "kb": 3.4
+ },
+ {
+  "path": "reports/冲击传导预测框架.md",
+  "kb": 3.5
+ },
+ {
+  "path": "reports/判断力诊断与增量路线.md",
+  "kb": 9.7
+ },
+ {
+  "path": "reports/宏观数据接入.md",
+  "kb": 4.6
+ },
+ {
+  "path": "reports/库存周期行业信号.md",
+  "kb": 4.0
+ },
+ {
+  "path": "reports/感知协作与现实.md",
+  "kb": 5.5
+ },
+ {
+  "path": "reports/星图_未来预测框架.md",
+  "kb": 5.7
+ },
+ {
+  "path": "reports/星图与投研工作站联通.md",
+  "kb": 2.5
+ },
+ {
+  "path": "reports/知识库积累_2026-11-14.md",
+  "kb": 3.5
+ },
+ {
+  "path": "reports/研报知识源接入.md",
+  "kb": 2.3
+ },
+ {
+  "path": "reports/研报逐份分析.md",
+  "kb": 2.5
+ },
+ {
+  "path": "reports/策略跟踪月报_2026-11.md",
+  "kb": 6.9
+ },
+ {
+  "path": "reports/缠论技术面接入.md",
+  "kb": 4.5
+ },
+ {
+  "path": "reports/缠论结构结合结论.md",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/美林时钟中国化实测.md",
+  "kb": 3.7
+ },
+ {
+  "path": "reports/项目总报告.md",
+  "kb": 9.0
+ },
+ {
+  "path": "scripts/analyze_docs.py",
+  "kb": 3.4
+ },
+ {
+  "path": "scripts/apply_shares.py",
+  "kb": 3.9
+ },
+ {
+  "path": "scripts/attach_doc_analysis.py",
+  "kb": 1.7
+ },
+ {
+  "path": "scripts/attach_entity_graph.py",
+  "kb": 9.1
+ },
+ {
+  "path": "scripts/attach_insight.py",
+  "kb": 3.0
+ },
+ {
+  "path": "scripts/attach_research.py",
+  "kb": 2.3
+ },
+ {
+  "path": "scripts/backtest_event_signal.py",
+  "kb": 3.6
+ },
+ {
+  "path": "scripts/backtest_event_signal2.py",
+  "kb": 3.2
+ },
+ {
+  "path": "scripts/backtest_v3.py",
+  "kb": 7.2
+ },
+ {
+  "path": "scripts/build_ai_embodied.py",
+  "kb": 12.9
+ },
+ {
+  "path": "scripts/build_atlas_data.py",
+  "kb": 17.9
+ },
+ {
+  "path": "scripts/build_atlas_html.py",
+  "kb": 2.2
+ },
+ {
+  "path": "scripts/build_china_domain.py",
+  "kb": 12.0
+ },
+ {
+  "path": "scripts/build_entity_graph.py",
+  "kb": 4.8
+ },
+ {
+  "path": "scripts/build_events.py",
+  "kb": 1.8
+ },
+ {
+  "path": "scripts/build_fund.py",
+  "kb": 2.1
+ },
+ {
+  "path": "scripts/build_fundamentals.py",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/build_industry.py",
+  "kb": 1.8
+ },
+ {
+  "path": "scripts/build_industry_index.py",
+  "kb": 2.0
+ },
+ {
+  "path": "scripts/build_industry_risk.py",
+  "kb": 3.2
+ },
+ {
+  "path": "scripts/build_space_domain.py",
+  "kb": 10.1
+ },
+ {
+  "path": "scripts/build_starmap_data.py",
+  "kb": 0.4
+ },
+ {
+  "path": "scripts/build_starmap_v2.py",
+  "kb": 3.2
+ },
+ {
+  "path": "scripts/build_supply_graph.py",
+  "kb": 4.7
+ },
+ {
+  "path": "scripts/build_wide_filtered.py",
+  "kb": 0.4
+ },
+ {
+  "path": "scripts/chan_bi_area_backtest.py",
+  "kb": 10.2
+ },
+ {
+  "path": "scripts/chan_bi_area_robust.py",
+  "kb": 4.5
+ },
+ {
+  "path": "scripts/chan_srv.js",
+  "kb": 1.1
+ },
+ {
+  "path": "scripts/chan_state_panel_probe.py",
+  "kb": 11.3
+ },
+ {
+  "path": "scripts/chan_state_probe.py",
+  "kb": 5.6
+ },
+ {
+  "path": "scripts/chanlun_backtest_ic.py",
+  "kb": 5.1
+ },
+ {
+  "path": "scripts/chanlun_features.py",
+  "kb": 2.1
+ },
+ {
+  "path": "scripts/chanlun_speed.py",
+  "kb": 1.0
+ },
+ {
+  "path": "scripts/clock_build.py",
+  "kb": 2.1
+ },
+ {
+  "path": "scripts/clock_filter.py",
+  "kb": 4.7
+ },
+ {
+  "path": "scripts/clock_filter_robust.py",
+  "kb": 4.1
+ },
+ {
+  "path": "scripts/clock_model.py",
+  "kb": 4.7
+ },
+ {
+  "path": "scripts/clock_retest_with_wind.py",
+  "kb": 5.1
+ },
+ {
+  "path": "scripts/clock_sensitivity.py",
+  "kb": 3.6
+ },
+ {
+  "path": "scripts/combo_analysis.py",
+  "kb": 5.4
+ },
+ {
+  "path": "scripts/cta_build.py",
+  "kb": 1.0
+ },
+ {
+  "path": "scripts/cta_strategy.py",
+  "kb": 3.7
+ },
+ {
+  "path": "scripts/custom_domain.py",
+  "kb": 4.3
+ },
+ {
+  "path": "scripts/delist_proxy.py",
+  "kb": 3.4
+ },
+ {
+  "path": "scripts/event_factors.py",
+  "kb": 3.6
+ },
+ {
+  "path": "scripts/event_oos.py",
+  "kb": 2.6
+ },
+ {
+  "path": "scripts/execution_cap.py",
+  "kb": 3.7
+ },
+ {
+  "path": "scripts/execution_cost.py",
+  "kb": 4.8
+ },
+ {
+  "path": "scripts/expand_supply_graph.py",
+  "kb": 7.6
+ },
+ {
+  "path": "scripts/factor_corr.py",
+  "kb": 4.6
+ },
+ {
+  "path": "scripts/factor_mine.py",
+  "kb": 8.3
+ },
+ {
+  "path": "scripts/factor_resid.py",
+  "kb": 3.9
+ },
+ {
+  "path": "scripts/factor_resid2.py",
+  "kb": 4.6
+ },
+ {
+  "path": "scripts/fetch_incremental.py",
+  "kb": 1.9
+ },
+ {
+  "path": "scripts/fetch_industry_index.py",
+  "kb": 1.6
+ },
+ {
+  "path": "scripts/fetch_industry_map.py",
+  "kb": 1.8
+ },
+ {
+  "path": "scripts/fetch_industry_map2.py",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/fetch_industry_map3.py",
+  "kb": 1.9
+ },
+ {
+  "path": "scripts/five_faces.py",
+  "kb": 4.0
+ },
+ {
+  "path": "scripts/fix_ln_cap.py",
+  "kb": 2.9
+ },
+ {
+  "path": "scripts/fix_scenario_coords.py",
+  "kb": 2.3
+ },
+ {
+  "path": "scripts/fund_factors.py",
+  "kb": 4.2
+ },
+ {
+  "path": "scripts/hedge.py",
+  "kb": 3.3
+ },
+ {
+  "path": "scripts/index_research.py",
+  "kb": 3.8
+ },
+ {
+  "path": "scripts/industry_cycle_sensitivity.py",
+  "kb": 3.7
+ },
+ {
+  "path": "scripts/industry_cycle_test.py",
+  "kb": 2.8
+ },
+ {
+  "path": "scripts/industry_deepdive.py",
+  "kb": 5.7
+ },
+ {
+  "path": "scripts/industry_momentum_test.py",
+  "kb": 6.6
+ },
+ {
+  "path": "scripts/judgment_increment_test.py",
+  "kb": 5.4
+ },
+ {
+  "path": "scripts/limitup2.py",
+  "kb": 2.9
+ },
+ {
+  "path": "scripts/limitup_fill.py",
+  "kb": 2.9
+ },
+ {
+  "path": "scripts/limitup_study.py",
+  "kb": 4.5
+ },
+ {
+  "path": "scripts/long_only.py",
+  "kb": 4.3
+ },
+ {
+  "path": "scripts/long_only_sens.py",
+  "kb": 3.1
+ },
+ {
+  "path": "scripts/macro_state_model.py",
+  "kb": 4.7
+ },
+ {
+  "path": "scripts/make_package.py",
+  "kb": 4.2
+ },
+ {
+  "path": "scripts/md2html.py",
+  "kb": 5.7
+ },
+ {
+  "path": "scripts/measure_leadtime.py",
+  "kb": 3.7
+ },
+ {
+  "path": "scripts/model_v3.py",
+  "kb": 8.7
+ },
+ {
+  "path": "scripts/model_v4.py",
+  "kb": 9.6
+ },
+ {
+  "path": "scripts/model_v4b.py",
+  "kb": 4.9
+ },
+ {
+  "path": "scripts/model_v5.py",
+  "kb": 7.0
+ },
+ {
+  "path": "scripts/model_v5b.py",
+  "kb": 2.5
+ },
+ {
+  "path": "scripts/model_v5c.py",
+  "kb": 3.2
+ },
+ {
+  "path": "scripts/model_v6.py",
+  "kb": 5.4
+ },
+ {
+  "path": "scripts/money_credit_clock.py",
+  "kb": 6.6
+ },
+ {
+  "path": "scripts/patch_workbench.py",
+  "kb": 21.5
+ },
+ {
+  "path": "scripts/portfolio_opt.py",
+  "kb": 5.9
+ },
+ {
+  "path": "scripts/portfolio_opt2.py",
+  "kb": 6.8
+ },
+ {
+  "path": "scripts/portfolio_opt_cmp.py",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/predict_impact.py",
+  "kb": 5.5
+ },
+ {
+  "path": "scripts/predict_impact_v2.py",
+  "kb": 8.2
+ },
+ {
+  "path": "scripts/predict_impact_v3.py",
+  "kb": 4.3
+ },
+ {
+  "path": "scripts/prediction_framework.py",
+  "kb": 5.6
+ },
+ {
+  "path": "scripts/probe/alt_events.py",
+  "kb": 1.5
+ },
+ {
+  "path": "scripts/probe/cninfo.py",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/probe/cninfo_scope.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/consistency.py",
+  "kb": 1.3
+ },
+ {
+  "path": "scripts/probe/credit2.py",
+  "kb": 0.8
+ },
+ {
+  "path": "scripts/probe/credit_data.py",
+  "kb": 1.0
+ },
+ {
+  "path": "scripts/probe/cta_data.py",
+  "kb": 0.5
+ },
+ {
+  "path": "scripts/probe/cta_data2.py",
+  "kb": 0.5
+ },
+ {
+  "path": "scripts/probe/data_fresh.py",
+  "kb": 0.9
+ },
+ {
+  "path": "scripts/probe/delisted.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/em_close_qa.py",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/probe/em_close_qa2.py",
+  "kb": 0.9
+ },
+ {
+  "path": "scripts/probe/em_fund.py",
+  "kb": 0.5
+ },
+ {
+  "path": "scripts/probe/em_ok.py",
+  "kb": 0.5
+ },
+ {
+  "path": "scripts/probe/event_leadtime.py",
+  "kb": 2.3
+ },
+ {
+  "path": "scripts/probe/event_samples.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/filter_stats.py",
+  "kb": 0.6
+ },
+ {
+  "path": "scripts/probe/fund_cover.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/futures.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/futures2.py",
+  "kb": 0.4
+ },
+ {
+  "path": "scripts/probe/impact_calib.py",
+  "kb": 0.9
+ },
+ {
+  "path": "scripts/probe/industry_map.py",
+  "kb": 0.9
+ },
+ {
+  "path": "scripts/probe/industry_src.py",
+  "kb": 1.0
+ },
+ {
+  "path": "scripts/probe/industry_src2.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/leadtime_data.py",
+  "kb": 1.6
+ },
+ {
+  "path": "scripts/probe/macro.py",
+  "kb": 0.6
+ },
+ {
+  "path": "scripts/probe/macro_em.py",
+  "kb": 0.6
+ },
+ {
+  "path": "scripts/probe/pit_test.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/sina_hist.py",
+  "kb": 0.5
+ },
+ {
+  "path": "scripts/probe/v5_b3.py",
+  "kb": 1.2
+ },
+ {
+  "path": "scripts/probe/v5_b4.py",
+  "kb": 1.3
+ },
+ {
+  "path": "scripts/probe/v5_b5.py",
+  "kb": 1.3
+ },
+ {
+  "path": "scripts/probe/v5_bisect.py",
+  "kb": 1.7
+ },
+ {
+  "path": "scripts/probe/v5_bisect2.py",
+  "kb": 1.9
+ },
+ {
+  "path": "scripts/probe/v5_dbg.py",
+  "kb": 0.7
+ },
+ {
+  "path": "scripts/probe/v5_mem.py",
+  "kb": 1.1
+ },
+ {
+  "path": "scripts/probe/v5_step.py",
+  "kb": 0.4
+ },
+ {
+  "path": "scripts/rebuild_all.sh",
+  "kb": 1.4
+ },
+ {
+  "path": "scripts/refresh_china_data.py",
+  "kb": 3.0
+ },
+ {
+  "path": "scripts/report_figs.py",
+  "kb": 6.1
+ },
+ {
+  "path": "scripts/smooth_diag.py",
+  "kb": 1.7
+ },
+ {
+  "path": "scripts/survivorship.py",
+  "kb": 2.6
+ },
+ {
+  "path": "scripts/survivorship_impact.py",
+  "kb": 1.8
+ },
+ {
+  "path": "scripts/test_chanlun_ic.py",
+  "kb": 2.6
+ },
+ {
+  "path": "scripts/test_five_faces.py",
+  "kb": 2.4
+ },
+ {
+  "path": "scripts/test_industry_filter.py",
+  "kb": 2.9
+ },
+ {
+  "path": "scripts/turnover_capacity.py",
+  "kb": 4.1
+ },
+ {
+  "path": "scripts/v5_diag.py",
+  "kb": 2.3
+ },
+ {
+  "path": "scripts/workbench_patch.css",
+  "kb": 1.4
+ },
+ {
+  "path": "src/stellarq/__init__.py",
+  "kb": 1.2
+ },
+ {
+  "path": "src/stellarq/bridge/chanlun.py",
+  "kb": 3.9
+ },
+ {
+  "path": "src/stellarq/bridge/chanlun_state.py",
+  "kb": 8.5
+ },
+ {
+  "path": "src/stellarq/bridge/insight.py",
+  "kb": 10.7
+ },
+ {
+  "path": "src/stellarq/bridge/insight.py.bak-before-pathfix",
+  "kb": 9.5
+ },
+ {
+  "path": "src/stellarq/data/__init__.py",
+  "kb": 0.1
+ },
+ {
+  "path": "src/stellarq/data/cache.py",
+  "kb": 3.4
+ },
+ {
+  "path": "src/stellarq/data/cninfo.py",
+  "kb": 4.0
+ },
+ {
+  "path": "src/stellarq/data/corporate.py",
+  "kb": 8.0
+ },
+ {
+  "path": "src/stellarq/data/eastmoney.py",
+  "kb": 8.8
+ },
+ {
+  "path": "src/stellarq/data/exchange_list.py",
+  "kb": 3.9
+ },
+ {
+  "path": "src/stellarq/data/panel.py",
+  "kb": 13.0
+ },
+ {
+  "path": "src/stellarq/data/sina_futures.py",
+  "kb": 4.1
+ },
+ {
+  "path": "src/stellarq/data/sources.py",
+  "kb": 8.5
+ },
+ {
+  "path": "src/stellarq/data/tencent.py",
+  "kb": 11.4
+ },
+ {
+  "path": "src/stellarq/factors/alpha.py",
+  "kb": 12.7
+ },
+ {
+  "path": "src/stellarq/factors/alpha_fast.py",
+  "kb": 14.0
+ },
+ {
+  "path": "src/stellarq/factors/build_wide.py",
+  "kb": 4.0
+ },
+ {
+  "path": "src/stellarq/factors/event_fund.py",
+  "kb": 5.5
+ },
+ {
+  "path": "src/stellarq/factors/wide_store.py",
+  "kb": 5.4
+ },
+ {
+  "path": "src/stellarq/macro/__init__.py",
+  "kb": 0.0
+ },
+ {
+  "path": "src/stellarq/macro/clock.py",
+  "kb": 6.0
+ },
+ {
+  "path": "src/stellarq/macro/wind_panel.py",
+  "kb": 4.4
+ },
+ {
+  "path": "src/stellarq/metrics.py",
+  "kb": 3.8
+ },
+ {
+  "path": "src/stellarq/models/ensemble.py",
+  "kb": 11.7
+ },
+ {
+  "path": "src/stellarq/models/gbdt.py",
+  "kb": 8.7
+ },
+ {
+  "path": "src/stellarq/models/walkforward.py",
+  "kb": 5.4
+ },
+ {
+  "path": "src/stellarq/numguard.py",
+  "kb": 10.0
+ },
+ {
+  "path": "src/stellarq/paths.py",
+  "kb": 1.7
+ },
+ {
+  "path": "src/stellarq/portfolio/construct.py",
+  "kb": 9.5
+ },
+ {
+  "path": "src/stellarq/portfolio/costs.py",
+  "kb": 3.9
+ },
+ {
+  "path": "src/stellarq/portfolio/riskmodel.py",
+  "kb": 7.0
+ },
+ {
+  "path": "src/stellarq/validation/factor_test.py",
+  "kb": 7.7
+ },
+ {
+  "path": "src/stellarq/validation/fast.py",
+  "kb": 9.8
+ },
+ {
+  "path": "tests/test_chanlun_state.py",
+  "kb": 4.4
+ },
+ {
+  "path": "web/README.md",
+  "kb": 1.7
+ },
+ {
+  "path": "web/_atlas_template.html",
+  "kb": 274.8
+ },
+ {
+  "path": "web/assets/icon.svg",
+  "kb": 0.7
+ },
+ {
+  "path": "web/atlas.html",
+  "kb": 373.8
+ },
+ {
+  "path": "web/boot.html",
+  "kb": 12.7
+ },
+ {
+  "path": "web/forecast_data.js",
+  "kb": 11.9
+ },
+ {
+  "path": "web/package.json",
+  "kb": 0.2
+ },
+ {
+  "path": "web/server/app.js",
+  "kb": 5.1
+ },
+ {
+  "path": "web/starmap.html",
+  "kb": 16.8
+ },
+ {
+  "path": "web/starmap_v2.html",
+  "kb": 21.4
+ },
+ {
+  "path": "web/趋势推演工作台.html",
+  "kb": 370.2
+ }
+]

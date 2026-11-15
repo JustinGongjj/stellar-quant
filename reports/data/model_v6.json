@@ -1,0 +1,54 @@
+{
+ "features": [
+  "KMID",
+  "LN_CAP",
+  "MA10",
+  "MA20",
+  "MA60",
+  "MA20_resid",
+  "MA60_resid",
+  "STD20",
+  "MIN5",
+  "MIN20",
+  "RET20",
+  "TURN5",
+  "VSTD20",
+  "VSTD20_resid",
+  "AMT_RATIO60",
+  "AMT_RATIO60_resid",
+  "VMA60",
+  "VSUMD60",
+  "CORR20",
+  "f_bp",
+  "f_rev_grow",
+  "ev_abnormal_20d"
+ ],
+ "design": [
+  389550,
+  22
+ ],
+ "test_ic": 0.06693589801860997,
+ "test_ic_n": 105,
+ "ece": 0.004814021760618616,
+ "rounds": [
+  {
+   "round": 0,
+   "n_features": 22,
+   "train_ic": 0.050128859646850585,
+   "best_iter": 7
+  },
+  {
+   "round": 1,
+   "n_features": 20,
+   "train_ic": 0.0556489614214692,
+   "best_iter": 13
+  }
+ ],
+ "long_only": {
+  "n": 105,
+  "ann_net": 0.06596614105854845,
+  "ann_excess": 0.018996411706865127,
+  "ir": 0.884221484854075,
+  "turnover": 0.5363809523809524
+ }
+}

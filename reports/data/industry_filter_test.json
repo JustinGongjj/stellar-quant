@@ -1,0 +1,9 @@
+{
+ "coverage": {
+  "hits": 34,
+  "total": 6300,
+  "stocks_with_risk": 21
+ },
+ "n_periods": 105,
+ "avg_removed": 0.08571428571428572
+}
